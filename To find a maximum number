@@ -1,0 +1,7 @@
+i = 2
+a_max = a_1
+
+for i 
+  if a_max <= a_i
+    a_max = a_i
+  else
