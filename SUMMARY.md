@@ -16,3 +16,7 @@
 
 ## MySQL
 
+## Code Structure & Algorithm
+
+* [Time Complexity](code-structure-and-algorithm/time-complexity.md)
+
