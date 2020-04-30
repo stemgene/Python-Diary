@@ -2,9 +2,9 @@
 
 * [Initial Page](README.md)
 
-## Pandas <a id="python"></a>
+## Python
 
-* [Untitled](python/untitled.md)
+* [Untitled](untitled.md)
 
 ## Statistics
 
