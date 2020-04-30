@@ -1,8 +1,8 @@
 # Time Complexity
 
-&lt;img src="[https://miro.medium.com/max/1400/1\*gHOSUEu-5eFY2xUTcVWwpw.png](https://miro.medium.com/max/1400/1*gHOSUEu-5eFY2xUTcVWwpw.png)" &gt;
+![](../.gitbook/assets/image%20%282%29.png)
 
-## 
+![](../.gitbook/assets/image%20%283%29.png)
 
 ## List time complexity
 
