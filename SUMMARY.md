@@ -18,6 +18,7 @@
 
 ## Code Structure & Algorithm
 
-* [Stack & Queue](code-structure-and-algorithm/stack-and-queue.md)
+* [Stack & Queue](code-structure-and-algorithm/stack-and-queue/README.md)
+  * [Sorting](code-structure-and-algorithm/stack-and-queue/sorting.md)
 * [Time Complexity](code-structure-and-algorithm/time-complexity.md)
 
