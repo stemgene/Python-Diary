@@ -109,7 +109,15 @@ def insertion_sort(alist):
         break
 ```
 
-### Shell Sorting
+```python
+def sortArray(alist): 
+    n = len(alist) 
+    for j in range(1, n): 
+        for i in range(j, 0, -1): 
+            if alist[i] < alist[i - 1]: 
+                alist[i-1], alist[i] = alist[i], alist[i-1] 
+    return alist
+```
 
 This spacing is termed as **interval**. First round take the interval = 4
 
