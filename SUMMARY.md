@@ -22,4 +22,5 @@
 * [Sorting](code-structure-and-algorithm/sorting.md)
 * [Stack & Queue](code-structure-and-algorithm/stack-and-queue.md)
 * [Time Complexity](code-structure-and-algorithm/time-complexity.md)
+* [Interview Questions](interview-questions.md)
 
