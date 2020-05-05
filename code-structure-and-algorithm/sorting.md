@@ -8,13 +8,14 @@
 | Shell Sort | O\( $$n^{1.3}$$ \) | O\( $$n^2$$ \) |
 | **Quick Sort** | **O\(nlogn\)** | **O\(** $$n^2$$ **\)** |
 | Merge Sort | O\(nlogn\) | O\(nlogn\) |
+| Binary Search | O\(1\) | O\(nlogn\) |
 
 ## Bubble Sorting
 
 * First iteration: horizontal i times, index \(0, n-1-j\)
 * Second iteration: vertical j times, index \(0, n-1\)
 
-![](../.gitbook/assets/image%20%2813%29.png)
+![](../.gitbook/assets/image%20%2814%29.png)
 
 ```python
 #先写内层循环i（横向），再写纵向的外层循环j
@@ -62,9 +63,9 @@ def bubble_sort(alist):
 * ......
 * 第n-1趟比较：第n-1个元素和第n个元素作比较，如果第n-1个元素大于第n个元素，交换它们。
 
-![](../.gitbook/assets/image%20%2811%29.png)
+![](../.gitbook/assets/image%20%2812%29.png)
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%289%29.png)
 
 ```python
 def selection_sort(alist):
@@ -121,13 +122,13 @@ def sortArray(alist):
 
 This spacing is termed as **interval**. First round take the interval = 4
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
-![](../.gitbook/assets/image%20%2814%29.png)
+![](../.gitbook/assets/image%20%2815%29.png)
 
 Then take interval = 2
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
 ![](../.gitbook/assets/image%20%285%29.png)
 
@@ -167,7 +168,7 @@ def shell_sort(alist):
 3. `low_index`向右，`high_index`向左，重复上述过程，直到`low_index==high_index`，然后把`mid_value`赋给这个位置。
 4. 分别重复做mid\_value左右两边的序列。
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2813%29.png)
 
 ```python
 def quick_sort(alist, first, last):
@@ -248,5 +249,54 @@ if __name__ == "__main__":
   print(alist)
   sorted_li = merge_sort(alist)
   print(sorted_li)
+```
+
+## Binary Search
+
+![](../.gitbook/assets/image%20%287%29.png)
+
+```python
+# 递归版本
+def binary_search(alist, item):
+  n = len(alist)
+  if n > 0:
+    mid = n//2
+    if alist[mid] == item:
+      return True
+    elif item < alist[mid]:
+      return binary_search(alist[:mid], item)
+    else:
+      return binary_search(alist[mid+1:], item)
+  return False
+
+if __name__ == "__main__":
+  alist = [17, 20, 26, 31, 44, 54, 55, 77, 93]
+  print(binary_search(alist, 55))
+  print(binary_search(alist, 100))
+  
+>>> True
+>>> False
+```
+
+```python
+# 非递归版本
+def binary_search(alist, item):
+  n = len(alist)
+  first = 0
+  last = n-1
+  while first <= last:
+    mid = (first + last) // 2
+    if alist[mid] == item:
+      return True
+    elif item < alist[mid]:
+      last = mid - 1
+    else:
+      first = mid + 1
+  return False
+
+if __name__ == "__main__":
+  alist = [17, 20, 26, 31, 44, 54, 55, 77, 93]
+  print(binary_search(alist, 55))
+  print(binary_search(alist, 100))
 ```
 
