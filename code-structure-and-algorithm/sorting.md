@@ -128,7 +128,7 @@ This spacing is termed as **interval**. First round take the interval = 4
 
 Then take interval = 2
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
 ![](../.gitbook/assets/image%20%285%29.png)
 
@@ -251,52 +251,5 @@ if __name__ == "__main__":
   print(sorted_li)
 ```
 
-## Binary Search
-
-![](../.gitbook/assets/image%20%287%29.png)
-
-```python
-# 递归版本
-def binary_search(alist, item):
-  n = len(alist)
-  if n > 0:
-    mid = n//2
-    if alist[mid] == item:
-      return True
-    elif item < alist[mid]:
-      return binary_search(alist[:mid], item)
-    else:
-      return binary_search(alist[mid+1:], item)
-  return False
-
-if __name__ == "__main__":
-  alist = [17, 20, 26, 31, 44, 54, 55, 77, 93]
-  print(binary_search(alist, 55))
-  print(binary_search(alist, 100))
-  
->>> True
->>> False
-```
-
-```python
-# 非递归版本
-def binary_search(alist, item):
-  n = len(alist)
-  first = 0
-  last = n-1
-  while first <= last:
-    mid = (first + last) // 2
-    if alist[mid] == item:
-      return True
-    elif item < alist[mid]:
-      last = mid - 1
-    else:
-      first = mid + 1
-  return False
-
-if __name__ == "__main__":
-  alist = [17, 20, 26, 31, 44, 54, 55, 77, 93]
-  print(binary_search(alist, 55))
-  print(binary_search(alist, 100))
-```
+## 
 
