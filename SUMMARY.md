@@ -8,6 +8,7 @@
 
 ## Statistics
 
+* [Review](statistics/review.md)
 * [Hypothesis and P-value](statistics/hypothesis-and-p-value.md)
 
 ## Computer Vision
