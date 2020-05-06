@@ -9,6 +9,7 @@
 ## Statistics
 
 * [Review](statistics/review.md)
+* [KNN](statistics/knn.md)
 * [Hypothesis and P-value](statistics/hypothesis-and-p-value.md)
 
 ## Computer Vision
