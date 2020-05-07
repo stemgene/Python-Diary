@@ -64,6 +64,10 @@ $$E(y_0-\hat{f}(x_0))^2=Var(\hat{f}(x_0))+[Bias(\hat{f}(x_0))]^2+Var(\epsilon)$$
 
 因为很难知道给定X后Y的条件分布，所以是难以达到的黄金标准
 
+#### KNN的错误率
+
+![](../.gitbook/assets/image%20%2818%29.png)
+
  
 
 

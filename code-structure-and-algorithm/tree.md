@@ -58,7 +58,7 @@ if __name__ == "__main__":
 
 ### Binary Tree
 
-![](../.gitbook/assets/image%20%2827%29.png)
+![](../.gitbook/assets/image%20%2828%29.png)
 
 * 每个节点最多有两个子树，被称为left subtree和right subtree
 * 在二叉树的第i层上至多有 $$2^{i-1}$$ 个节点（横向的最多节点数）
