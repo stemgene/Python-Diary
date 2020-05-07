@@ -9,6 +9,7 @@
 ## Statistics
 
 * [Review](statistics/review.md)
+* [Linear Regression](statistics/linear-regression.md)
 * [KNN](statistics/knn.md)
 * [Hypothesis and P-value](statistics/hypothesis-and-p-value.md)
 
