@@ -15,7 +15,7 @@
 * First iteration: horizontal i times, index \(0, n-1-j\)
 * Second iteration: vertical j times, index \(0, n-1\)
 
-![](../.gitbook/assets/image%20%2817%29.png)
+![](../.gitbook/assets/image%20%2818%29.png)
 
 ```python
 #先写内层循环i（横向），再写纵向的外层循环j
@@ -63,9 +63,9 @@ def bubble_sort(alist):
 * ......
 * 第n-1趟比较：第n-1个元素和第n个元素作比较，如果第n-1个元素大于第n个元素，交换它们。
 
-![](../.gitbook/assets/image%20%2815%29.png)
+![](../.gitbook/assets/image%20%2816%29.png)
 
-![](../.gitbook/assets/image%20%2812%29.png)
+![](../.gitbook/assets/image%20%2813%29.png)
 
 ```python
 def selection_sort(alist):
@@ -91,7 +91,7 @@ if __name__ == "__main__":
 
 把一个数列分为前后两个，前面的是有序的，后面的是原有的无序的。每一轮遍历都将新的数字和前面的有序序列的每一个元素比较，直到找到正确的位置插入。Selection Sorting操作的是无序序列（每一轮找到无序序列的极值），而Insertion Sorting操作的是有序序列的一侧。
 
-![](../.gitbook/assets/image%20%289%29.png)
+![](../.gitbook/assets/image%20%2810%29.png)
 
 ```python
 def insertion_sort(alist):
@@ -122,15 +122,15 @@ def sortArray(alist):
 
 This spacing is termed as **interval**. First round take the interval = 4
 
-![](../.gitbook/assets/image%20%2819%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2819%29.png)
 
 Then take interval = 2
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2828%29.png)
 
-![](../.gitbook/assets/image%20%288%29.png)
+![](../.gitbook/assets/image%20%289%29.png)
 
 Finally, take interval = 1, just like Insertion Sorting
 
@@ -168,7 +168,7 @@ def shell_sort(alist):
 3. `low_index`向右，`high_index`向左，重复上述过程，直到`low_index==high_index`，然后把`mid_value`赋给这个位置。
 4. 分别重复做mid\_value左右两边的序列。
 
-![](../.gitbook/assets/image%20%2816%29.png)
+![](../.gitbook/assets/image%20%2817%29.png)
 
 ```python
 def quick_sort(alist, first, last):
