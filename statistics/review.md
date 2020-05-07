@@ -19,7 +19,6 @@
 
 * Prediction: $$\hat{Y}=\hat{f}(X)+\epsilon$$ ，由X推导$$\hat{Y}$$，不太关注$$\hat{f}$$具体的内容
 * Inference：研究$$\hat{Y}和\hat{f}(X)$$的关系，如Y和X是否相关？哪个X对Y的影响更大？改变哪个X可以改变Y
-
   * 如果建模的主旨是inference，采用**线性模型**这种结构限定的模型的解释性Interpretability比较强，更容易理解Y随着某些X变化的关系，而且往往可以得到更精确的结果，因为对抗overfitting. 这个限定性或曲线的光滑度即是**自由度degree of freedom**，限定性强且曲线平坦的模型比锯齿形曲线具有更小的自由度。
 
 ![&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x7684;&#x89E3;&#x91CA;&#x6027;&#x548C;&#x9002;&#x914D;&#x6027;](../.gitbook/assets/image%20%288%29.png)
@@ -34,6 +33,8 @@
   * Disadvantage: need more data
 
 ## Evaluation
+
+无论是Regression和Classification，选择合适的光滑水平是成功建模的关键，需要权衡Bias-Var以及导致测试误差产生的U形曲线。
 
 ### Regression: 
 
