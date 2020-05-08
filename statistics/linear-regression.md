@@ -42,3 +42,44 @@ $$R^2=\frac{TSS-RSS}{TSS}=1-\frac{RSS}{TSS}=1-\frac{\sum (y_i-\hat{y_i})^2}{\sum
 
 $$Cor(X,Y)=\frac{\sum (x_i-\bar{x})(y_i-\bar{y_i})}{\sqrt{\sum (x_i-\bar{x_i})^2}\sqrt{\sum (y_i-\bar{y_i})^2}}$$和$$R^2$$一样也衡量了X和Y的线性关系，事实上对于简单线性相关，$$R^2=r^2$$，但相关性并没有自动扩展到多元情境中，因为相关性只衡量一对变量之间的关系。 
 
+## Multiple Regression
+
+Slope in simple regression indicate the relationship between y and only single x and ignore other features , slopes in mutiple regression indicate the relationship between y and only single x and other features are still.
+
+In a multiple regression, the coefficient before some variables may be very small, it seems useless to predict y, however, if make a correlation matrix among all variables and y, that variable may has strong relationship to other variables or y. 
+
+Some simple regression may indicate ridiculous story, such like shark attack has positive correlation with sales of icecream. The fact is this regression is lack of the most important predictor, the temperature. High temperature causes more persons play at beach and bring better sales of icecream and count number of shark attack.
+
+### Relationship between Y and Xs
+
+#### Determine all variables
+
+To determine whether there is a relationship between Y and all Xs, we can implement F-statistic. We create a null hypothesis $$H_0: \beta_1=\beta_2=...=\beta_p=0$$, then $$F=\frac{(TSS-RSS)/p}{RSS/(n-p-1)}$$. 
+
+* $$H_0$$is true: If the null hypothesis is true, the value of F should be close to 1. Or if n is small, F should be large to reject $$H_0$$
+* $$H_1$$is true: the value of F should be much greater than 1. Or if n is large, even F is a litter greater than 1, it should be fine
+
+#### Determine subset of variables
+
+### Choose important variables
+
+* Akaike Information Criterion \(AIC\)
+* Bayesian Information Criterion \(BIC\)
+* Adjusted $$R^2$$ 
+* Forward selection. From null model \(only contain $$\beta_0$$\), add one variable each time, and calculate the RSS. Find the minimum of RSS
+* Backward Selection. From all variables, and **delete the greatest p-value** item each iteration until meet some criterion. But if p &gt; n, can't use Backward Selection.
+* Mixed Selection. Mix forward and backward selection.
+
+### Evaluation
+
+Gernerally, RSE smaller and $$R^2$$greater, the model is better.
+
+* RSE:$$RSE=\sqrt{\frac{1}{n-p-1}RSS}=\sqrt{\frac{1}{n-p-1}\sum (y_i-\hat{y_i})^2}$$
+* $$R^2$$ : In multiple regression, the $$R^2=Cor(Y, \hat{Y})^2$$. We can measure the value of $$R^2$$, if delete or add a variable can cause this value change significantly, this variable should be important.
+
+## Qualitative Prediction
+
+
+
+
+
