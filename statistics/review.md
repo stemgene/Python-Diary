@@ -71,7 +71,7 @@ $$E(y_0-\hat{f}(x_0))^2=Var(\hat{f}(x_0))+[Bias(\hat{f}(x_0))]^2+Var(\epsilon)$$
 
 KNN可以产生对最优贝叶斯分类器近似的分类器。
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2819%29.png)
 
 当1/K增加时，方法的柔性增强，training error会持续递减，但test error显示U形
 

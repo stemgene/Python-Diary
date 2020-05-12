@@ -79,6 +79,59 @@ Gernerally, RSE smaller and $$R^2$$greater, the model is better.
 
 ## Qualitative Prediction
 
+### Binary: 
+
+**Dummy variable**: $$x_i=\left\{\begin{matrix} 1 & Female \\   0& Male \end{matrix}\right.$$ 
+
+$$y_i=\beta_0+\beta_1x_i+\epsilon_i=\left\{\begin{matrix} \beta_0+\beta_1+\epsilon_i & Female \\  \beta_0+\epsilon_i& Male \end{matrix}\right.$$ 
+
+### 多元回归：
+
+创建多个dummy variables，如种族中第一个哑变量 $$x_{i1}=\left\{\begin{matrix} 1 & Asian \\   0& 非亚洲人 \end{matrix}\right.$$，第二个哑变量 $$x_{i2}=\left\{\begin{matrix} 1 & 白种人 \\   0& 非白人 \end{matrix}\right.$$ 
+
+$$y_i=\beta_0+\beta_1x_{i1}+\beta_2x_{i2}+\epsilon_i=\left\{\begin{matrix} \beta_0+\beta_1+\epsilon_i & 亚洲人 \\\beta_0+\beta_2+\epsilon_i &白种人 \\ \beta_0+\epsilon_i& 非裔美国人  \end{matrix}\right.$$， $$\beta_0$$解释非裔美国人，$$\beta_1$$解释亚洲人和非裔美国人的差异，$$\beta_2$$解释亚洲人和非裔美国人的差异。
+
+* 哑变量个数比定性个数少1
+* 没有相对应的哑变量（非裔美国人）被称为基准水平baseline
+
+## 扩展线性模型
+
+### 变量之间的交互作用interaction
+
+x之间不是简单的互相独立，而是在两个x上均分预算可能比全部投入其中一个x更能增加，在营销中成为协同效应synergy。
+
+判断是否具有交互作用：当两个x其中一个较低时，真实的y总是低于线性模型的预测，但当两个x比较平均时，模型往往会低估y。
+
+加入交互项 $$x_1x_2$$，如果可以看到交互项的p值非常低，而模型的$$R^2$$增加，说明交互项是非常必要的。
+
+需要说明的是，如果模型中有交叉项，那么即使主效应的系数的p值不显著，也应包含在模型中。
+
+### 非线性关系：多项式回归polynomial regression
+
+对于有曲线轨迹的拟合样本，引入一些非线性的函数如 $$x^2,x^3,log(x), \sqrt{x}$$等进行预测，但整个模型仍然是线性模型。
+
+#### 残差图：识别非线性关系
+
+残差图是残差 $$e_i=y_i-\hat{y_i}$$和预测值 $$y_i$$的散点图。理想情况下，残差图显示不出明显的规律。若存在明显规律，则表示线性模型的某些方面可能有问题
+
+![](../.gitbook/assets/image%20%2812%29.png)
+
+如上图左上的残差呈现明显的倒U型，证明了非线性关系，左下的图中加入了二次项模型的结果，图中的残差没有规律，表明二次项的加入提升模型的拟合度。
+
+#### 误差项自相关
+
+假如一项用于个人体重预测身高的研究，若研究中有些人是同一家庭的成员，或吃同样的饮食，或暴露在同样的环境因素下，误差不相关的假设可能会不成立。
+
+时间序列中，相邻的时间点获得的观测误差有正相关关系。令相邻点误差项的相关性为 $$\rho$$ ，对着$$\rho$$从0-1，对应的残差图会看到tracking的现象，即相邻的残差可能有相似的值。
+
+
+
+ 
+
+
+
+ 
+
 
 
 
