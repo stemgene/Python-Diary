@@ -21,6 +21,7 @@
 
 ## Code Structure & Algorithm
 
+* [Regular Expression](code-structure-and-algorithm/regular-expression.md)
 * [Tree](code-structure-and-algorithm/tree.md)
 * [Sorting](code-structure-and-algorithm/sorting.md)
 * [Stack & Queue](code-structure-and-algorithm/stack-and-queue.md)
