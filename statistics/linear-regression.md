@@ -134,13 +134,13 @@ x之间不是简单的互相独立，而是在两个x上均分预算可能比全
 
 #### Outlier和高杠杆点high leverage
 
-Outlier是y值距离大众远，而高杠杆点是x值距离其他x远。事实上
+Outlier是y值距离大众远，而高杠杆点是x值距离其他x远。事实上high leverage往往对回归线的估计有很大影响。
 
 左图中20是outlier，41是high leverge。中图的红色点无论在x1和x2中都是正常值，但仍落在主体之外，因此是high leverage。右图41具有high leverage和高残差。
 
 ![](../.gitbook/assets/image%20%2827%29.png)
 
- 
+如何找到high leverage？可以通过观察x，但有些情况对于单个变量是合理的，但组合在一起就不行了，如右图。有一种量化leverage的方法，leverage statistic。对于一元线性回归， $$h_i=\frac{1}{n}+\frac{(x_i-\bar{x})^2}{\sum(x_{i'}-\bar{x})^2}$$。可见 
 
 
 
