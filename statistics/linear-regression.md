@@ -124,7 +124,21 @@ x之间不是简单的互相独立，而是在两个x上均分预算可能比全
 
 时间序列中，相邻的时间点获得的观测误差有正相关关系。令相邻点误差项的相关性为 $$\rho$$ ，对着$$\rho$$从0-1，对应的残差图会看到tracking的现象，即相邻的残差可能有相似的值。
 
+#### 误差项方差非恒定
 
+如果误差项的方差不是恒定的，即 $$VAR(\epsilon_i)\neq\sigma^2$$，如误差项的方差可能会随响应值的增加而增加，残差图可以看出呈漏斗形funnel shape，这个现象是误差项方差非恒定或存在异方差性heteroscedasticity 
+
+![](../.gitbook/assets/image%20%2818%29.png)
+
+一个可能的解决方案是用凹函数对响应值y做变换，比如$$log(y), \sqrt{y}$$，这种变化使较大的响应值有更大的收缩，降低了异方差性。
+
+#### Outlier和高杠杆点high leverage
+
+Outlier是y值距离大众远，而高杠杆点是x值距离其他x远。事实上
+
+左图中20是outlier，41是high leverge。中图的红色点无论在x1和x2中都是正常值，但仍落在主体之外，因此是high leverage。右图41具有high leverage和高残差。
+
+![](../.gitbook/assets/image%20%2827%29.png)
 
  
 

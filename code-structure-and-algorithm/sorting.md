@@ -15,7 +15,7 @@
 * First iteration: horizontal i times, index \(0, n-1-j\)
 * Second iteration: vertical j times, index \(0, n-1\)
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2821%29.png)
 
 ```python
 #先写内层循环i（横向），再写纵向的外层循环j
@@ -122,13 +122,13 @@ def sortArray(alist):
 
 This spacing is termed as **interval**. First round take the interval = 4
 
-![](../.gitbook/assets/image%20%2823%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
-![](../.gitbook/assets/image%20%2821%29.png)
+![](../.gitbook/assets/image%20%2822%29.png)
 
 Then take interval = 2
 
-![](../.gitbook/assets/image%20%2830%29.png)
+![](../.gitbook/assets/image%20%2832%29.png)
 
 ![](../.gitbook/assets/image%20%289%29.png)
 
@@ -168,7 +168,7 @@ def shell_sort(alist):
 3. `low_index`向右，`high_index`向左，重复上述过程，直到`low_index==high_index`，然后把`mid_value`赋给这个位置。
 4. 分别重复做mid\_value左右两边的序列。
 
-![](../.gitbook/assets/image%20%2818%29.png)
+![](../.gitbook/assets/image%20%2819%29.png)
 
 ```python
 def quick_sort(alist, first, last):

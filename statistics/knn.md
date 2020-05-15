@@ -12,11 +12,11 @@
 
 上图中需要对问号❓做出预测，假设K=3，那么KNN首先先识别出最靠近问号处的三个观测值。在这个范围内有两个绿色和一个红星，结果绿色三角的估计概率就是2/3，红星的估计概率是1/3。于是KNN将问号预测为绿色族。
 
-![](../.gitbook/assets/image%20%2822%29.png)
+![](../.gitbook/assets/image%20%2823%29.png)
 
 虚线是贝叶斯决策边界。K=1时类似过拟合，Bias比较低但Var大，当K增加到100时，模型的光滑性减弱，得到一个接近线性的决策边界，Var较低但Bias高
 
-![](../.gitbook/assets/image%20%2825%29.png)
+![](../.gitbook/assets/image%20%2826%29.png)
 
 当1/K增加时，方法的柔性增强，training error会持续递减，但test error显示U形
 
