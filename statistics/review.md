@@ -23,7 +23,7 @@
 * Inference：研究$$\hat{Y}和\hat{f}(X)$$的关系，如Y和X是否相关？哪个X对Y的影响更大？改变哪个X可以改变Y
   * 如果建模的主旨是inference，采用**线性模型**这种结构限定的模型的解释性Interpretability比较强，更容易理解Y随着某些X变化的关系，而且往往可以得到更精确的结果，因为对抗overfitting. 这个限定性或曲线的光滑度即是**自由度degree of freedom**，限定性强且曲线平坦的模型比锯齿形曲线具有更小的自由度。
 
-![&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x7684;&#x89E3;&#x91CA;&#x6027;&#x548C;&#x9002;&#x914D;&#x6027;](../.gitbook/assets/image%20%288%29.png)
+![&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x7684;&#x89E3;&#x91CA;&#x6027;&#x548C;&#x9002;&#x914D;&#x6027;](../.gitbook/assets/image%20%2812%29.png)
 
 ## Estimate $$\hat{f}$$
 
@@ -51,7 +51,7 @@ $$E(y_0-\hat{f}(x_0))^2=Var(\hat{f}(x_0))+[Bias(\hat{f}(x_0))]^2+Var(\epsilon)$$
 * 方差$$Var(\hat{f}(x_0))$$：对于适配不同的数据集，估计函数所产生的改变量。如果Var大，训练数据集微小的变化会导致估计函数较大的改变。自由度高有更大的方差。对于线性模型，如果自由度太大的话，Var会快速增加
 * 偏差$$Bias(\hat{f}(x_0))$$：估计函数$$\hat{f}(x_0)$$本身和真实函数的误差，因为现实的模型几乎不是线性的，所以一般来说，自由度越高的方法所产生的偏差越小。对于非线性模型，稍微增加一些自由度，其Bias会迅速降低
 
-![](../.gitbook/assets/image%20%285%29.png)
+![](../.gitbook/assets/image%20%288%29.png)
 
 ### Classification
 
@@ -71,7 +71,7 @@ $$E(y_0-\hat{f}(x_0))^2=Var(\hat{f}(x_0))+[Bias(\hat{f}(x_0))]^2+Var(\epsilon)$$
 
 KNN可以产生对最优贝叶斯分类器近似的分类器。
 
-![](../.gitbook/assets/image%20%2820%29.png)
+![](../.gitbook/assets/image%20%2824%29.png)
 
 当1/K增加时，方法的柔性增强，training error会持续递减，但test error显示U形
 
