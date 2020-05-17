@@ -23,7 +23,7 @@
 * Inference：研究$$\hat{Y}和\hat{f}(X)$$的关系，如Y和X是否相关？哪个X对Y的影响更大？改变哪个X可以改变Y
   * 如果建模的主旨是inference，采用**线性模型**这种结构限定的模型的解释性Interpretability比较强，更容易理解Y随着某些X变化的关系，而且往往可以得到更精确的结果，因为对抗overfitting. 这个限定性或曲线的光滑度即是**自由度degree of freedom**，限定性强且曲线平坦的模型比锯齿形曲线具有更小的自由度。
 
-![&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x7684;&#x89E3;&#x91CA;&#x6027;&#x548C;&#x9002;&#x914D;&#x6027;](../.gitbook/assets/image%20%2812%29.png)
+![&#x4E0D;&#x540C;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x7684;&#x89E3;&#x91CA;&#x6027;&#x548C;&#x9002;&#x914D;&#x6027;](../.gitbook/assets/image%20%2813%29.png)
 
 ## Estimate $$\hat{f}$$
 
@@ -71,7 +71,7 @@ $$E(y_0-\hat{f}(x_0))^2=Var(\hat{f}(x_0))+[Bias(\hat{f}(x_0))]^2+Var(\epsilon)$$
 
 KNN可以产生对最优贝叶斯分类器近似的分类器。
 
-![](../.gitbook/assets/image%20%2824%29.png)
+![](../.gitbook/assets/image%20%2827%29.png)
 
 当1/K增加时，方法的柔性增强，training error会持续递减，但test error显示U形
 
