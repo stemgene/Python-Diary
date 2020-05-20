@@ -68,8 +68,11 @@ git status
 git log
 # basic
 git add .
-git commit
-git push 
+git commit -m "updata information"
+git remote -v
+>>>origin	git@github.com:s/exercise.git (fetch)
+>>>origin	git@github.com:s/exercise.git (push)
+git push origin master
 ```
 
 [https://guides.github.com/activities/hello-world/](https://guides.github.com/activities/hello-world/)

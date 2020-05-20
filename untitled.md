@@ -46,11 +46,25 @@ from projectname.custom_funcs import custom_preprocessor
 
 ```
 
+
+
 此外还有sklearn的transformerMixin和pipeline等使MLproject变得高效的工具
+
+## Module & Package
+
+Module: .py file
+
+Package: a dictionary with `__init__.py`
+
+{% embed url="https://zhuanlan.zhihu.com/p/37047465" %}
+
+如何导入不同文件夹的package：[https://blog.csdn.net/zhili8866/article/details/52980924](https://blog.csdn.net/zhili8866/article/details/52980924)
 
 ## Environment
 
 配置conda环境：[https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
+
+环境管理：[https://www.jb51.net/softjc/696132.html](https://www.jb51.net/softjc/696132.html)
 
 ## pathlib
 
@@ -60,5 +74,44 @@ from projectname.custom_funcs import custom_preprocessor
 
 {% embed url="https://zhuanlan.zhihu.com/p/87940289" %}
 
-[https://zhuanlan.zhihu.com/p/33524938](https://zhuanlan.zhihu.com/p/33524938)
+```text
+|- in/
+   |- input.xlsx
+|- out/
+   |- output.xlsx
+```
+
+```python
+# walk through subdictrinory
+in_file = Path.cwd() / "in" / "input.xlsx"
+out_file = Path.cwd() / "out" / "output.xlsx"
+# another way
+in_file = Path.cwd().joinpath("in").joinpath("input.xlsx")
+out_file = Path.cwd().joinpath("out").joinpath("output.xlsx")
+# tricky way
+parts = ["in", "input.xlsx"]
+in_file = Path.cwd().joinpath(*parts)
+
+# walk up to parents, the number is bigger, closer to root
+In : p = Path('/Users/dongweiming/test')
+In : p.parents[0]
+Out: PosixPath('/Users/dongweiming')
+In : p.parents[1]
+Out: PosixPath('/Users')
+In : p.parents[2]
+Out: PosixPath('/')
+In : p.parent
+Out: PosixPath('/Users/dongweiming')
+In : p.parent.parent
+Out: PosixPath('/Users')
+
+# Parse file names
+filename = Path("source_data/text_files/raw_data.txt")
+print(filename.name)
+# prints "raw_data.txt"
+print(filename.suffix)
+# prints "txt"
+print(filename.stem)
+# prints "raw_data"
+```
 
