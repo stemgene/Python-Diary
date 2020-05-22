@@ -35,3 +35,7 @@
 
 * [Github](tools-and-platforms/github.md)
 
+## Machine Learning
+
+* [Evaluation](machine-learning/evaluation.md)
+
