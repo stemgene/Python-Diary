@@ -1,3 +1,9 @@
+---
+description: >-
+  Python cookbook:
+  https://python3-cookbook.readthedocs.io/zh_CN/latest/c10/p01_make_hierarchical_package_of_modules.html
+---
+
 # Libraries
 
 ## Directory Structure
@@ -54,11 +60,32 @@ from projectname.custom_funcs import custom_preprocessor
 
 Module: .py file
 
-Package: a dictionary with `__init__.py`
+Package: a dictionary with `__init__.py`. 这个文件可以是空的，也可以导入module。
+
+* `__init__.py`中还可以有一个重要的变量，`__all__`。如`__all__=["mod1","mod2"在此module中的两个py文件,"sub"子文件夹]`
 
 {% embed url="https://zhuanlan.zhihu.com/p/37047465" %}
 
-如何导入不同文件夹的package：[https://blog.csdn.net/zhili8866/article/details/52980924](https://blog.csdn.net/zhili8866/article/details/52980924)
+{% embed url="https://www.jianshu.com/p/d0a5a42569cb" %}
+
+[https://zhuanlan.zhihu.com/p/54764686](https://zhuanlan.zhihu.com/p/54764686)
+
+## sys
+
+### sys.path
+
+当我们导入一个模块时：import  xxx，默认情况下python解析器会搜索当前目录、已安装的内置模块和第三方模块，搜索路径存放在**sys模块的path**中：
+
+```python
+>>>import sys
+>>>sys.path
+['/Users/Downloads/code/Python/Project/Haoyuan_Dong_presession_exercise/notebook',
+ '/Users/opt/anaconda3/lib/python37.zip',
+ '/Users/opt/anaconda3/lib/python3.7']
+ >>>sys.path.append("path of package")
+```
+
+sys.path returns a list, so we can use `sys.path.append("引用模块的地址")`，来添加自己写的模块
 
 ## Environment
 
