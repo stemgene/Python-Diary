@@ -39,3 +39,7 @@
 
 * [Evaluation](machine-learning/evaluation.md)
 
+## Recommendation System
+
+* [推荐系统实践](recommendation-system/tui-jian-xi-tong-shi-jian.md)
+
