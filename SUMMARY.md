@@ -42,5 +42,5 @@
 ## Recommendation System
 
 * [推荐系统实践](recommendation-system/tui-jian-xi-tong-shi-jian.md)
-* [Neighborhood-based](recommendation-system/neighborhood-based.md)
+* [Neighborhood-based collaborative filtering](recommendation-system/neighborhood-based.md)
 
