@@ -10,7 +10,7 @@ LFM用于计算用户u对物品i的兴趣，$$Preference(u,i)=r_{ui}=p^T_uq_i=\s
 
 通过code按照物品的流行度采样出热门的但用户却没有过行为的物品后，得到一个用户--物品集K={\(u, i\)}，其中如果\(u, i\)是正样本，则有 $$r_{ui}=1$$，否则$$r_{ui}=0$$（比如网站首页推送的链接，用户u点击，就是$$r_{ui}=1$$，反之$$r_{ui}=0$$）。然后需要优化如下的loss function来找到最合适的参数p和q：
 
-![](../.gitbook/assets/image%20%2860%29.png)
+![](../.gitbook/assets/image%20%2865%29.png)
 
 $$\lambda||p_u||^2+\lambda||q_i||^2$$是用来防止过拟合的正则化项，用梯度下降来最小化loss function。首先对参数p和q求偏导 $$\frac{\partial C}{\partial P_{uk}}=-2q_{ik}+2\lambda p_{uk}$$和 $$\frac{\partial C}{\partial q_{ik}}=-2p_{uk}+2\lambda q_{ik}$$。然后梯度下降，将参数沿着最快度下降方向推进，得到递推公式： $$p_{uk}=p_{uk}+\alpha(q_{ik}-\lambda p_{uk})$$ 和 $$q_{ik}=q_{ik}+\alpha(p_{uk}-\lambda q_{ik})$$ ，alpha是learning rate。
 
