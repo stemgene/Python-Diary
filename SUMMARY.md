@@ -29,6 +29,7 @@
 * [Sorting](code-structure-and-algorithm/sorting.md)
 * [Stack & Queue](code-structure-and-algorithm/stack-and-queue.md)
 * [Time Complexity](code-structure-and-algorithm/time-complexity.md)
+* [Dijkstra算法python详细实现（最短路径）](code-structure-and-algorithm/dijkstra-suan-fa-python-xiang-xi-shi-xian-zui-duan-lu-jing.md)
 * [Interview Questions](interview-questions.md)
 
 ## Tools & Platforms
@@ -45,4 +46,5 @@
 * [Neighborhood-based collaborative filtering](recommendation-system/neighborhood-based.md)
 * [Latent factor model隐语义模型](recommendation-system/latent-factor-model-yin-yu-yi-mo-xing.md)
 * [Graph-based基于图的模型](recommendation-system/graphbased-ji-yu-tu-de-mo-xing.md)
+* [Insight project](recommendation-system/insight-project.md)
 
