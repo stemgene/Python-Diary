@@ -44,11 +44,21 @@ TF-IDF提取热词
 
 #### [快速生成食物向量](https://medium.com/shidanqing/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E9%A3%9F%E7%89%A9%E5%90%91%E9%87%8F-5cc39adfb291)
 
-## Recommendation algorithm
+### Recommendation algorithm
 
 {% embed url="https://blog.csdn.net/John\_xyz/article/details/78915150" %}
 
 #### [推荐系统遇上深度学习\(二十五\)--当知识图谱遇上个性化推荐](https://zhuanlan.zhihu.com/p/48601941)
 
 #### [近期必读的12篇「推荐系统」相关论文](https://www.ctolib.com/topics-138700.html)
+
+## Recognize item in image
+
+{% embed url="https://www.researchgate.net/publication/283200263\_DeepBag\_Recognizing\_Handbag\_Models" %}
+
+{% embed url="https://sci-hub.tw/10.1109/TMM.2015.2480228" %}
+
+{% embed url="http://www.bmva.org/bmvc/2017/papers/paper066/paper066.pdf" %}
+
+
 
