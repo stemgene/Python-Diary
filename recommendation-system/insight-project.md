@@ -1,4 +1,4 @@
-# Insight project
+# Insight project idea
 
 ## A recommendation mechanism for YouTuber
 

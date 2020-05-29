@@ -48,5 +48,5 @@
 * [Neighborhood-based collaborative filtering](recommendation-system/neighborhood-based.md)
 * [Latent factor model隐语义模型](recommendation-system/latent-factor-model-yin-yu-yi-mo-xing.md)
 * [Graph-based基于图的模型](recommendation-system/graphbased-ji-yu-tu-de-mo-xing.md)
-* [Insight project](recommendation-system/insight-project.md)
+* [Insight project idea](recommendation-system/insight-project.md)
 
