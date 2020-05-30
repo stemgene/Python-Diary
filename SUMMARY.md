@@ -19,6 +19,7 @@
 
 ## Computer Vision
 
+* [Insight project](computer-vision/insight-project.md)
 * [Untitled](computer-vision/untitled.md)
 
 ## MySQL
