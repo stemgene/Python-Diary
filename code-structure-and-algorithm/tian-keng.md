@@ -8,3 +8,15 @@
 
 解决办法：找到文件的relative path。可以通过os.path或者通过vscode自身的功能。参考：[https://www.cnblogs.com/wjw2018/p/10536355.html](https://www.cnblogs.com/wjw2018/p/10536355.html)
 
+## Computer Vision
+
+### cv2转化gray显示黄绿色
+
+原因：matplotlib默认的cmap参数有关，可以改为
+
+```text
+plt.imshow(img_rgb2gray, cmap="gray")
+```
+
+[https://dashen-tech.com/opencv/opencv-python-converts-color-space.html](https://dashen-tech.com/opencv/opencv-python-converts-color-space.html)
+
