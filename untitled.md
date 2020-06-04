@@ -109,6 +109,7 @@ sys.path returns a list, so we can use `sys.path.append("引用模块的地址")
 ```
 
 ```python
+from pathlib import Path
 # walk through subdictrinory
 in_file = Path.cwd() / "in" / "input.xlsx"
 out_file = Path.cwd() / "out" / "output.xlsx"
