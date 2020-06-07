@@ -68,7 +68,9 @@ Package: a dictionary with `__init__.py`. 这个文件可以是空的，也可�
 
 {% embed url="https://www.jianshu.com/p/d0a5a42569cb" %}
 
-[https://zhuanlan.zhihu.com/p/54764686](https://zhuanlan.zhihu.com/p/54764686)
+{% embed url="https://zhuanlan.zhihu.com/p/54764686" %}
+
+[https://zhuanlan.zhihu.com/p/42220907](https://zhuanlan.zhihu.com/p/42220907)
 
 ## sys
 
