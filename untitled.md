@@ -89,6 +89,12 @@ Package: a dictionary with `__init__.py`. 这个文件可以是空的，也可�
 
 sys.path returns a list, so we can use `sys.path.append("引用模块的地址")`，来添加自己写的模块
 
+## OS
+
+### os.chdir
+
+在notebook的代码cell中，如果需要访问不同层级文件夹中的内容时，可以用`os.chdir("path")`
+
 ## Environment
 
 配置conda环境：[https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html)
