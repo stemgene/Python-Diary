@@ -37,6 +37,8 @@ ssh-add -K ~/.ssh/id_rsa_githubss
 
 6. edit config文件
 
+有时候，会提示没有public key，此时需要重新配置一下config文件
+
 ```text
 Host InsightDS
   AddKeysToAgent yes
