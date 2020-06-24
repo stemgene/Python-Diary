@@ -131,9 +131,31 @@ Expected Frequency \( $$E_{ij}$$\):  $$E_{ij}=\frac{(T_i)*(T_j)}{T}$$
 
 Chi-square test statistic: $$\chi_{(i-1)(j-1)}^2=\sum{\frac{(O_{ij}-E_{ij})^2}{E}}$$ 
 
-Example:
+**Example 1**:
 
 ![](https://lh5.googleusercontent.com/YtZcRc1gkKSno3noAYsDPgiC6tPq_uMMvnRa_OjuGVJajuqWlJggsoJhUUFkezta5dTTyMcK8E87-YVr8jxSdFjBsY6m2ru43bpdRhRziMQeTS0rfDBMT_Gmjo13xp2SvIFQNjsKKAk)
 
-####    
+| Expected A | Expected B |
+| :--- | :--- |
+| $$E_{11}=\frac{679*400}{1300}=212$$  | 188 |
+| 265 | 235 |
+| 212 | 188 |
+
+$$\chi^2=\frac{(232-212)^2}{212}+\frac{(260-265)^2}{265}+\frac{(197-212)^2}{212}+\frac{(168-188)^2}{188}+\frac{(240-235)^2}{235}+\frac{(203-188)^2}{188}=6.48$$
+
+$$\chi_{0.05,2}^2=5.991$$ , Reject H0
+
+**Example 2:**
+
+![](https://lh3.googleusercontent.com/ISKmgAVhvg3V6qqmaAiSRMLacYj2eXA6i1cyD-tZxd8jufaFf5dbu_enU7aJA4ozF2LzZqOeqMQ8ElfmCn1VgVygLq3XMT4qsisB4XaYPs6xVHwfZXy9lOIGXJ_ndZTMyPedOQSG8bI)
+
+![](https://lh3.googleusercontent.com/2BHGaFcj5KszlQimOkY92H3t766I2iw25lxY-gZuoDhd6qS9oTV1CsI4BVL6pBA9ZNyoAbBbiRzjSn1r9zCfRq-Bnt7HHuKDIEVJ_CNE6Y78JnitZJqaDEmkVbH_6QFJXj_dpXyZlxw)
+
+Test Statistics: $$\chi_3^2=16.55$$ , Critical Value: $$\chi_{0.05, 3}^2=7.8$$, Reject null hypothesis.
+
+### 3. Relationship between **Categorical and Numerical Variables**
+
+#### **3.1 Side-by-Side Boxplot**
+
+![Number of clubs college students are involved with and their class year](https://lh6.googleusercontent.com/mp1p4AuV3Nox3BXfmo5QOWG_ok76_QBeXH1Qy8LBNeQ5I5lym873rmKMOd4hMNc4eM5G9ntUE6KQjgIRvsdv_LXjERGfZu3bmSGDiCjWSZyXC1kL9OIIkeMYm5uek7S7rWZdZoKB-8U)
 
