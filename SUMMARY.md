@@ -4,6 +4,8 @@
 
 ## Python
 
+---
+
 * [Pandas Profiling Report](untitled-1.md)
 * [Libraries](untitled.md)
 * [Work with big data](work-with-big-data.md)
@@ -11,7 +13,7 @@
 ## Statistics
 
 * [Review](statistics/review.md)
-* [Not Found](statistics/linear-regression.md)
+* [Descriptive Statistics](statistics/linear-regression.md)
 * [KNN](statistics/knn.md)
 * [Hypothesis and P-value](statistics/hypothesis-and-p-value.md)
 * [Feature selection](statistics/feature-selection.md)
