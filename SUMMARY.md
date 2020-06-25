@@ -45,6 +45,7 @@
 
 ## Machine Learning
 
+* [Cluster](machine-learning/cluster.md)
 * [Evaluation](machine-learning/evaluation.md)
 
 ## Recommendation System
