@@ -12,10 +12,10 @@
 
 ## **P-value**
 
-When we execute a **hypothesis test** in statistics, P-value is used to **determine the significance** of results after a hypothesis test in statistics. 
+When we execute a **hypothesis test** in statistics, P-value is used to **determine the significance** of results after a hypothesis test in statistics. The definition of P-value is: The probability of observed or more extreme outcome, given that the null hypothesis is true. Null Hypothesis: no effects or no difference
 
 P-value helps the readers to draw conclusions and is always between 0 and 1.
 
-* P- Value &gt; alpha \(e.g., 0.05\) denotes weak evidence against the null hypothesis which means the null hypothesis cannot be rejected.
-* P-value &lt;=  alpha\(e.g., 0.05\) denotes strong evidence against the null hypothesis which means the null hypothesis can be rejected.
+* P- Value &gt; alpha \(e.g., 0.05\) denotes weak evidence against the null hypothesis which means the null hypothesis cannot be rejected. it is likely to observe the data even if the null hypothesis is true
+* P-value &lt;=  alpha\(e.g., 0.05\) denotes strong evidence against the null hypothesis which means the null hypothesis can be rejected, it is very unlikely to observe the data if the null hypothesis is true
 
