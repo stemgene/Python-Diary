@@ -2,7 +2,7 @@
 
 **Cluster:** Finding groups of objects such that the objects in a group will be similar \(or related\) to one another and different from \(or unrelated to\) the objects in other groups. **Minimize intra-cluster distance, maximize inter-cluster distance**
 
-![](../.gitbook/assets/image%20%2869%29.png)
+![](../.gitbook/assets/image%20%2870%29.png)
 
 ## **Distance & Norm:**
 
@@ -37,7 +37,7 @@ K-Means 聚类\(MacQueen, 1967\)是以样本间距离为基础，将所有的观
    2. Recompute the centroid of each cluster
 3. until The centroids don't change
 
-![](../.gitbook/assets/image%20%2868%29.png)
+![](../.gitbook/assets/image%20%2869%29.png)
 
 K均值算法通常在前几个iteration中就收敛converge
 

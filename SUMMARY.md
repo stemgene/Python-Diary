@@ -41,6 +41,7 @@
 
 ## Tools & Platforms
 
+* [MySQL](tools-and-platforms/mysql.md)
 * [Github](tools-and-platforms/github.md)
 
 ## Machine Learning
