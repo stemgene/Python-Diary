@@ -28,6 +28,7 @@
 ## Interview
 
 * [Interview Questions](interview/interview-questions.md)
+* [Behavior Questions](interview/behavior-questions.md)
 
 ## Code Structure & Algorithm
 
