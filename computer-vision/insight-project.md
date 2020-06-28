@@ -1,5 +1,9 @@
 # Insight project
 
+{% embed url="https://www.cnblogs.com/wildgoose/p/12905004.html" %}
+
+[https://blog.csdn.net/u013685264/article/details/100564660](https://blog.csdn.net/u013685264/article/details/100564660)
+
 ## [Python新工具：用三行代码提取PDF表格数据](https://www.jiqizhixin.com/articles/2019-10-09-6)
 
 ## [Python编程：利用ImageMagick转换PDF为图片并识别提取图表](https://www.guoxiongfei.cn/csdn/2730.html)
