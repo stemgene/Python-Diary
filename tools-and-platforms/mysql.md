@@ -204,7 +204,7 @@ Self Join
 
 ```
 
-  
+[https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/](https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/)  
 
 
 
