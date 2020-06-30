@@ -1,3 +1,8 @@
+---
+description: >-
+  https://learnsql.com/track/sql-fundamentals/course/sql-queries/introduction/introduction/relational-databases
+---
+
 # MySQL
 
 ## General
@@ -69,6 +74,15 @@ INNER JOIN Review
 GROUP BY Movie.MovieID, Movie.Title
 HAVING AVG(Rating) < 3
 ```
+
+## [Window Function](https://learnsql.com/blog/sql-window-functions-cheat-sheet/Window_Functions_Cheat_Sheet.pdf)
+
+窗口的概念非常重要，它可以理解为记录集合，窗口函数也就是在满足某种条件的记录集合上执行的特殊函数。对于每条记录都要在此窗口内执行函数，有的函数随着记录不同，窗口大小都是固定的，这种属于静态窗口；有的函数则相反，不同的记录对应着不同的窗口，这种动态变化的窗口叫滑动窗口。
+
+窗口函数和普通聚合函数也很容易混淆，二者区别如下：
+
+* 聚合函数是将多条记录聚合为一条；而窗口函数是每条记录都会执行，有几条记录执行完还是几条。
+* 聚合函数也可以用于窗口函数中
 
 ```sql
 table

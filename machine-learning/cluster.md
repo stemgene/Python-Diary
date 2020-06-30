@@ -1,5 +1,9 @@
 # Cluster
 
+{% embed url="https://blog.csdn.net/sinat\_26917383/article/details/51611519" %}
+
+[https://blog.csdn.net/jinping\_shi/article/details/52433975](https://blog.csdn.net/jinping_shi/article/details/52433975)
+
 **Cluster:** Finding groups of objects such that the objects in a group will be similar \(or related\) to one another and different from \(or unrelated to\) the objects in other groups. **Minimize intra-cluster distance, maximize inter-cluster distance**
 
 ![](../.gitbook/assets/image%20%2870%29.png)
