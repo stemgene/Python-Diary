@@ -26,3 +26,13 @@ Phik \(φk\) is a new and practical correlation coefficient that works consisten
 
 Cramér's V is an association measure for nominal random variables. The coefficient ranges from 0 to 1, with 0 indicating independence and 1 indicating perfect association. The empirical estimators used for Cramér's V have been proved to be biased, even for large samples. We use a bias-corrected measure that has been proposed by Bergsma in 2013 that can be found [here](http://stats.lse.ac.uk/bergsma/pdf/cramerV3.pdf).
 
+## Lambda
+
+### IF, else, elif: 
+
+`x1 if term1 else (x2 if term2 else x3)`
+
+```text
+df['week'].apply(lambda x: 2 if x > 10 else (1 if x > 4 else 0))
+```
+
