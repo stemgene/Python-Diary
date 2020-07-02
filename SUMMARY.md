@@ -17,7 +17,7 @@
 * [Regression](statistics/regression.md)
 * [Classification](statistics/classification.md)
 * [KNN](statistics/knn.md)
-* [Hypothesis and P-value](statistics/hypothesis-and-p-value.md)
+* [Hypothesis](statistics/hypothesis-and-p-value.md)
 * [Feature selection](statistics/feature-selection.md)
 
 ## Computer Vision
