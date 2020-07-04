@@ -25,6 +25,8 @@ Type I Error $$\alpha$$ : False Positive. 二者其实没有区别，结果落�
 
 Type II Error $$\beta$$: False Negative，二者本来有区别，因为选择的margin是t\*，当测试集中的数据处于t\*左侧，即$$\beta$$区域，所以错误的认为没有区别。反映到日常案例中就是实验结果好（网页改动有比较显著的效果），但判断时认为改动没有效果。
 
+样本的多少决定了分布跨度的大小，当样本越多，分布越收敛，尾部的概率就越小。
+
 Power: the probability of rejecting H0 when it is, in fact, wrong。 $$Power=1-\beta$$ 
 
 ![](../.gitbook/assets/image%20%2871%29.png)
@@ -35,6 +37,7 @@ Power: the probability of rejecting H0 when it is, in fact, wrong。 $$Power=1-\
 
 * A是原来的产品功能control group，B是新的产品功能实验组experiment group。
 * 需要确定关注指标如click through ratio是不是提升
+* 在实验中会遇到Type I or II的情况，此时可以提高样本量或者延长实验时间，会使两个分布更分开一些。
 
 ### Steps:
 
