@@ -32,7 +32,7 @@ git remote -v
 ```text
 ssh-keygen -t rsa -C "github邮箱" -b 4096 -f ~/.ssh/id_rsa_github
 # add key to ssh-key chain
-ssh-add -K ~/.ssh/id_rsa_githubss
+ssh-add -K ~/.ssh/id_rsa_github
 ```
 
 6. edit config文件
