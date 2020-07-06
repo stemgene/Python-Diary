@@ -151,3 +151,7 @@ print(filename.stem)
 # prints "raw_data"
 ```
 
+## Frequence Pattern Mining
+
+### [Apriori](http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/)
+
