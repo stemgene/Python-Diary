@@ -53,11 +53,12 @@
 * [Frequence Pattern Mining](machine-learning/frequence-pattern-mining.md)
 * [梯度爆炸](machine-learning/ti-du-bao-zha.md)
 
-## Recommendation System
+## Other Topics
 
-* [推荐系统实践](recommendation-system/tui-jian-xi-tong-shi-jian.md)
-* [Neighborhood-based collaborative filtering](recommendation-system/neighborhood-based.md)
-* [Latent factor model隐语义模型](recommendation-system/latent-factor-model-yin-yu-yi-mo-xing.md)
-* [Graph-based基于图的模型](recommendation-system/graphbased-ji-yu-tu-de-mo-xing.md)
-* [Insight project idea](recommendation-system/insight-project.md)
+* [推荐系统实践](other-topics/tui-jian-xi-tong-shi-jian.md)
+* [Neighborhood-based collaborative filtering](other-topics/neighborhood-based.md)
+* [Latent factor model隐语义模型](other-topics/latent-factor-model-yin-yu-yi-mo-xing.md)
+* [Graph-based基于图的模型](other-topics/graphbased-ji-yu-tu-de-mo-xing.md)
+* [Insight project idea](other-topics/insight-project.md)
+* [Time Series](other-topics/time-series.md)
 
