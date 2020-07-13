@@ -37,7 +37,7 @@ P-value helps the readers to draw conclusions and is always between 0 and 1.
 
 Sample mean的置信区间和Hypothesis有着数学上的关系。对于一个双边z-test，阴影部分叫**rejection region**，任何落在\[-1.96, 1.96\]之间的z值所反映的是p-value &gt; 0.05，接受H0。-1.96和1.96称作**critical values**。
 
-![](../.gitbook/assets/image%20%2876%29.png)
+![](../.gitbook/assets/image%20%2877%29.png)
 
 * Confidence interval：根据sample mean给出总体 $$\mu$$ 一个合理的区间。求出critical value $$Z_{\alpha}=qnorm(\alpha)$$，接着再比较 $$|Z|$$ 和 $$Z_{\alpha}$$ 的关系 
 * Hypothesis: 根据p-value来决定是否预估的值是正确的，收集证据去拒绝H0。由 $$Z=\frac{\bar{x}-\mu_0}{\sigma/\sqrt{n}}$$求Z，然后P=norm\(Z\) ，判断P与 $$\alpha$$ 。
@@ -52,13 +52,13 @@ Sample mean的置信区间和Hypothesis有着数学上的关系。对于一个�
 
 #### 单个样本组的t-test
 
-![](../.gitbook/assets/image%20%2875%29.png)
+![](../.gitbook/assets/image%20%2876%29.png)
 
 $$t=\frac{\bar{x}-\mu_0}{s/\sqrt{n}}$$，df=n-1 
 
 #### 比较两组数据的t-test：首先决定这两组population是paired还是独立的
 
-![](../.gitbook/assets/image%20%2874%29.png)
+![](../.gitbook/assets/image%20%2875%29.png)
 
 **1.Paired Samples: 同一群体不同时间，有相同均值的**
 
@@ -77,7 +77,7 @@ $$\bar{X_d}=\frac{\sum{d}}{n}$$ ， $$s_d=\sqrt{\frac{\sum{(d_i-\bar{x})^2}}{n-1
 
 1. Variance equal: $$\sigma^2_1=\sigma^2_2$$ 
 
-![](../.gitbook/assets/image%20%2873%29.png)
+![](../.gitbook/assets/image%20%2874%29.png)
 
 * $$\sigma^2$$is known, Z-test. $$SE=\sqrt{\sigma^2(\frac{1}{n_1}+\frac{1}{n_2})}$$， $$Z=\frac{(X^2_1-X^2_2)-(\mu_1-\mu_2)}{SE}=\frac{(X^2_1-X^2_2)-(\mu_1-\mu_2)}{\sqrt{\sigma^2(\frac{1}{n_1}+\frac{1}{n_2})}}$$ 
 * $$\sigma^2$$is unknown, t-test. 用 $$S^2_p=\frac{(n_1-1)S^2_1+(n_2-1)S^2_2}{n_1+n_2-2}$$替换$$\sigma^2$$
@@ -88,7 +88,7 @@ $$\bar{X_d}=\frac{\sum{d}}{n}$$ ， $$s_d=\sqrt{\frac{\sum{(d_i-\bar{x})^2}}{n-1
 
      2. Variance unequal \(Welch t-test\):$$\sigma^2_1\ne\sigma^2_2$$
 
-![](../.gitbook/assets/image%20%2878%29.png)
+![](../.gitbook/assets/image%20%2879%29.png)
 
 此时$$(\bar{X_1}-\bar{X_2})\sim N(\mu_1-\mu_2,\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}})$$， $$t=\frac{(\bar{X_1}-\bar{X_2})-(\mu_1-\mu_2)}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}$$ 
 
