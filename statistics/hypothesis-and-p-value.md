@@ -88,7 +88,7 @@ $$\bar{X_d}=\frac{\sum{d}}{n}$$ ， $$s_d=\sqrt{\frac{\sum{(d_i-\bar{x})^2}}{n-1
 
      2. Variance unequal \(Welch t-test\):$$\sigma^2_1\ne\sigma^2_2$$
 
-![](../.gitbook/assets/image%20%2879%29.png)
+![](../.gitbook/assets/image%20%2880%29.png)
 
 此时$$(\bar{X_1}-\bar{X_2})\sim N(\mu_1-\mu_2,\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}})$$， $$t=\frac{(\bar{X_1}-\bar{X_2})-(\mu_1-\mu_2)}{\sqrt{\frac{s_1^2}{n_1}+\frac{s_2^2}{n_2}}}$$ 
 
