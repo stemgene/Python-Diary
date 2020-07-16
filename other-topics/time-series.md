@@ -69,7 +69,7 @@ Stationary Criterion:
 ### 判断stationary
 
 * Rolling statistic --即每个时间段内的平均数据均值和标准差情况，如下图的rolling均值/标准差具有越来越大的趋势，是不稳定的
-* Dickey-Fuller Test。通过假设检验
+* Advanced Dickey-Fuller Test \(ADF\)。通过假设检验
 
 ![](../.gitbook/assets/image%20%2879%29.png)
 
@@ -91,6 +91,8 @@ Stationary Criterion:
 
 [自相关与偏自相关的简单介绍](http://www.atyun.com/4462.html)
 
+对于AR\(p\)模型， PACF会在lag=p时截尾，也就是PACF图中的值落入宽带区域中。MA\(q\)模型，ACF会在lag=q时截尾，ACF图中的值落入宽带区域中。
+
 ## Prediction
 
 首先确定p，d，q的参数
@@ -98,6 +100,13 @@ Stationary Criterion:
 可以比对AR，MA和ARIMA三种模型的RSS，选择最小的说明拟合度最好。
 
 用数据带入模型进行预测
+
+进一步检验拟合好的模型。残差是不是white noise，可以用ACF，如果ACF的值在lag=1是必须在宽带区域内，因为任意相邻两项没有任何关系，所以也不会有自相关系数。
+
+进一步用Ljung-Box方法检验：Null Hypothesis：自相关系数rho1=rho2=rho3...=0。
+
+* 如果检验出来拒绝了原假设（显著有差别），说明rho不等于0。如果p-value&lt;0.05，或卡方值&gt;3.89或5.99拒绝原假设
+* 如果检验出来接受原假设，则剩余白噪声，即p-value&gt;0.05或卡方值&lt;3.84或5.99
 
 参考：
 
