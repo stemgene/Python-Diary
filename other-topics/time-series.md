@@ -120,5 +120,7 @@ Stationary Criterion:
 
 5.Kaggle: [Everything you can do with a time series](https://www.kaggle.com/thebrownviking20/everything-you-can-do-with-a-time-series/notebook#3.-Time-series-decomposition-and-Random-walks)
 
+6. [http://www.math.pku.edu.cn/teachers/lidf/course/fts/ftsnotes/html/\_ftsnotes/fts-tslin.html](http://www.math.pku.edu.cn/teachers/lidf/course/fts/ftsnotes/html/_ftsnotes/fts-tslin.html)
+
 
 
