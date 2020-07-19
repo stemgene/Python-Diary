@@ -19,6 +19,7 @@
 * [KNN](statistics/knn.md)
 * [Hypothesis](statistics/hypothesis-and-p-value.md)
 * [Feature selection](statistics/feature-selection.md)
+* [Q-Q Plot](statistics/q-q-plot.md)
 
 ## Computer Vision
 

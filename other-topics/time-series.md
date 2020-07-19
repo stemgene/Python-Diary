@@ -8,7 +8,7 @@ description: >-
 
 ## 时间序列数据
 
-![](../.gitbook/assets/image%20%2873%29.png)
+![](../.gitbook/assets/image%20%2883%29.png)
 
 ## Time Series Preprocessing
 
@@ -95,7 +95,7 @@ Stationary Criterion:
 
 ## Prediction
 
-首先确定p，d，q的参数
+首先确定p，d，q的参数。差分自回归移动平均模型写成ARIMA\(p,d,q\)。p代表自回归阶数；d代表差分次数；q代表移动平均阶数。有时输出的ARIMA模型包括6个参数：ARIMA\(p,d,q\)\(P,D,Q\)，这是因为如果时间序列中包含季节变动成分的话，需要首先将季节变动分解出来，然后再分别分析移除季节变动后的时间序列和季节变动本身。这里小写的p,d,q描述的是移除季节变动成分后的时间序列；大写的P,D,Q描述的是季节变动成分。两个部分是相乘的关系。因此，ARIMA\(p,d,q\)\(P,D,Q\)也被称为复合季节模型。
 
 可以比对AR，MA和ARIMA三种模型的RSS，选择最小的说明拟合度最好。
 
