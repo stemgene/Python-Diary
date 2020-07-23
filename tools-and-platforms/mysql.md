@@ -94,8 +94,29 @@ WHERE review.rating >= 3 # review: table, rating: col
         <p>CAST(&apos;9.5&apos; AS decimal(10, 2))# &#x7CBE;&#x5EA6;&#x4E0E;&#x5C0F;&#x6570;&#x4F4D;&#x6570;&#x5206;&#x522B;&#x4E3A;10&#x4E0E;2&#x3002;&#x7CBE;&#x5EA6;&#x662F;&#x603B;&#x7684;&#x6570;&#x5B57;&#x4F4D;&#x6570;&#xFF0C;&#x5305;&#x62EC;&#x5C0F;&#x6570;&#x70B9;&#x5DE6;&#x8FB9;&#x548C;&#x53F3;&#x8FB9;&#x4F4D;&#x6570;&#x7684;&#x603B;&#x548C;&#x3002;&#x800C;&#x5C0F;&#x6570;&#x4F4D;&#x6570;&#x662F;&#x5C0F;&#x6570;&#x70B9;&#x53F3;&#x8FB9;&#x7684;&#x4F4D;&#x6570;</p>
       </td>
     </tr>
+    <tr>
+      <td style="text-align:left">%&#x53D6;&#x4F59;&#x6570;</td>
+      <td style="text-align:left">
+        <p>&#x5076;&#x6570; num%2 = 0</p>
+        <p>&#x5947;&#x6570; num%2 = 1</p>
+      </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">LEN()</td>
+      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">substr()</td>
+      <td style="text-align:left">
+        <p>substr(string ,num start,num length)</p>
+        <p>where lower(substr(city,1,1)) in (&apos;a&apos;,&apos;e&apos;,&apos;i&apos;,&apos;o&apos;,&apos;u&apos;);
+          #&#x5F00;&#x5934;&#x5B57;&#x6BCD;&#x662F;&#x5143;&#x97F3;</p>
+      </td>
+    </tr>
   </tbody>
 </table>
+
+
 
 
 

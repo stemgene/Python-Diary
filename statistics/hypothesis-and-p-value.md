@@ -120,6 +120,10 @@ Example: 比较男性和女性右手的比例是否一致
 
 ## A/B Testing
 
+{% embed url="https://zhuanlan.zhihu.com/p/68019926" %}
+
+{% embed url="http://blog.itpub.net/31555699/viewspace-2653832/" %}
+
 主要应用在比较成熟的产品上，对产品有有限的几处改动，而且满足可以测试的人比较多的情况。
 
 * A是原来的产品功能control group，B是新的产品功能实验组experiment group。
