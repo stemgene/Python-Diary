@@ -39,7 +39,7 @@
 * [Tree](code-structure-and-algorithm/tree.md)
 * [Sorting](code-structure-and-algorithm/sorting.md)
 * [Stack & Queue](code-structure-and-algorithm/stack-and-queue.md)
-* [Time Complexity](code-structure-and-algorithm/time-complexity.md)
+* [Time & Space Complexity](code-structure-and-algorithm/time-complexity.md)
 * [Dijkstra算法python详细实现（最短路径）](code-structure-and-algorithm/dijkstra-suan-fa-python-xiang-xi-shi-xian-zui-duan-lu-jing.md)
 
 ## Tools & Platforms
