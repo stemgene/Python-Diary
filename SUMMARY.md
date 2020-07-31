@@ -35,6 +35,7 @@
 
 * [填坑](code-structure-and-algorithm/tian-keng.md)
 * [Regular Expression](code-structure-and-algorithm/regular-expression.md)
+* [Binary Search](code-structure-and-algorithm/binary-search.md)
 * [Tree](code-structure-and-algorithm/tree.md)
 * [Sorting](code-structure-and-algorithm/sorting.md)
 * [Stack & Queue](code-structure-and-algorithm/stack-and-queue.md)
