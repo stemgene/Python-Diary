@@ -2,7 +2,7 @@
 
 ## Stack \(LIFO, last in first out\)
 
-A container to access, delete, insert data. Only has one top, which can **push** and **pop** data. 
+A container to access, delete, insert data. Only has one top, which can **push** and **pop** data. O\(1\) for operations
 
 ![](../.gitbook/assets/image%20%2821%29.png)
 
