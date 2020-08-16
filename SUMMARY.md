@@ -54,6 +54,7 @@
 * [Evaluation](machine-learning/evaluation.md)
 * [Frequence Pattern Mining](machine-learning/frequence-pattern-mining.md)
 * [梯度爆炸](machine-learning/ti-du-bao-zha.md)
+* [NLP](machine-learning/nlp.md)
 
 ## Other Topics
 
