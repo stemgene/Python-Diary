@@ -116,7 +116,27 @@ for our example, $$\hat{p}=\frac{53}{62}=0.855$$, for 95% confidence interval, w
 
 Example: 比较男性和女性右手的比例是否一致
 
- 
+### One-way ANOVA（通过比较variance来对比多个对照组之间的均值是否一致，也可以用在多元线性回归中）
+
+{% embed url="https://zhuanlan.zhihu.com/p/57896471" %}
+
+比较两个样本之间的均值用以上的方法，如果三个以上同时比较，就可以用到One-way ANOVA，如要比较以下ABC的三个样本组， $$H_0:\mu_A=\mu_B=\mu_C$$ 。
+
+![](../.gitbook/assets/image%20%2885%29.png)
+
+ANOVA的核心公式是 $$F=\frac{MSB}{MSE}$$, 即组间方差和组内房差的比值 
+
+![](../.gitbook/assets/image%20%2887%29.png)
+
+如果F值很大，说明MSB很大，几个组之间分离很远，均值肯定不一样。此时拒绝Null Hypothesis
+
+![F&#x503C;&#x5F88;&#x5927;&#x7684;&#x60C5;&#x51B5;](../.gitbook/assets/image%20%2888%29.png)
+
+如果F值很小或接近1，说明MSB小，几个组之间不能分开，无法拒绝Null Hypothesis
+
+![](../.gitbook/assets/image%20%2886%29.png)
+
+![](../.gitbook/assets/image%20%2889%29.png)
 
 ## A/B Testing
 
