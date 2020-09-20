@@ -1,4 +1,6 @@
-# Binary Search
+# Double Pointers
+
+## Binary Search
 
 ### Example 1
 
