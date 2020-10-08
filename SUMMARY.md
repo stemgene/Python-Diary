@@ -28,6 +28,7 @@
 
 ## Interview
 
+* [Statistics](interview/statistics.md)
 * [Interview Questions--Machine Learning](interview/interview-questions.md)
 * [Behavior Questions](interview/behavior-questions.md)
 
