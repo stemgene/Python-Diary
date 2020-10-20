@@ -52,6 +52,10 @@
 
 ## List time complexity
 
+Python中的list存放的是变量内容的地址而不是变量内容的本身，如下图。所以对list取值要慢一些。insert和del的时间复杂度都是O\(n\)。
+
+![](../.gitbook/assets/image%20%2890%29.png)
+
 | **LIST** |  | **Big-O Efficiency** |
 | :--- | :--- | :--- |
 | **index\[\]/assignment** | **`list[9]`** | **O\(1\)** |
