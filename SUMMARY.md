@@ -42,6 +42,7 @@
 * [Stack & Queue](code-structure-and-algorithm/stack-and-queue.md)
 * [Time & Space Complexity](code-structure-and-algorithm/time-complexity.md)
 * [Dijkstra算法python详细实现（最短路径）](code-structure-and-algorithm/dijkstra-suan-fa-python-xiang-xi-shi-xian-zui-duan-lu-jing.md)
+* [Dynamic Programming](code-structure-and-algorithm/dynamic-programming.md)
 
 ## Tools & Platforms
 

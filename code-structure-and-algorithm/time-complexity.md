@@ -54,7 +54,7 @@
 
 Python中的list存放的是变量内容的地址而不是变量内容的本身，如下图。所以对list取值要慢一些。insert和del的时间复杂度都是O\(n\)。另外Python中的list是栈stack的数据结构LIFO
 
-![](../.gitbook/assets/image%20%2890%29.png)
+![](../.gitbook/assets/image%20%2891%29.png)
 
 | **LIST** |  | **Big-O Efficiency** |
 | :--- | :--- | :--- |
