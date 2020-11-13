@@ -21,7 +21,7 @@ description: >-
 
 ```sql
 SELECT DISTINCT Movie.MovieID,
-       MAX(Rating) as maxRating,
+       MAX(Rating) as "Max Rating",
        AVG(Rating) as avgRating
 FROM Review
 WHERE role NOT IN ("admin", "premium") 
