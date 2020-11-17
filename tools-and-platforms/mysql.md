@@ -116,7 +116,15 @@ WHERE review.rating >= 3 # review: table, rating: col
   </tbody>
 </table>
 
+SQL的comparison operators，=, !=, &lt;, &lt;=, &gt;, &gt;=不仅可以用在numerical data，对于字符串等非数字型的数据也可以。**但是需要注意的是必须用单引号来框上该变量，SQL中用单引号来引用column中的值。**  
 
+```sql
+SELECT *
+FROM table
+WHERE month_name != 'January'
+// can use <, > or other operators 按照字母顺序来比对
+WHERE month_name > 'July'
+```
 
 
 
