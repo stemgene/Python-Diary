@@ -48,6 +48,7 @@
 
 * [MySQL](tools-and-platforms/mysql.md)
 * [Github](tools-and-platforms/github.md)
+* [PostgreSQL](tools-and-platforms/postgresql.md)
 
 ## Machine Learning
 
