@@ -73,7 +73,7 @@ DROP DATABASE demo2;
 
 ```text
 \l  list of database
-\c  move inside a database
+\c name use this database
 \du list of roles
 \dt show table in database
 ```
