@@ -47,7 +47,9 @@
 ## Tools & Platforms
 
 * [MySQL](tools-and-platforms/mysql.md)
-* [Github](tools-and-platforms/github.md)
+* [Github](tools-and-platforms/github/README.md)
+  * [SSH访问](tools-and-platforms/github/ssh-fang-wen.md)
+  * [通过vscode访问](tools-and-platforms/github/tong-guo-vscode-fang-wen.md)
 * [PostgreSQL](tools-and-platforms/postgresql.md)
 
 ## Machine Learning
