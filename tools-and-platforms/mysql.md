@@ -372,5 +372,20 @@ Self Join
 [https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/](https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/)  
 
 
+## 外键约束
+
+创建外键时需要额外定义DELETE或UPDATE时该如何操作。
+
+### 更新时相应更新CASCADE
+
+```sql
+在tag表中：
+ADD CONSTRAINT `fk_tag_User`
+  FOREIGN KEY (`User_id`)
+  REFERENCES `User` (`id`)
+  ON DELETE CASCADE
+  ON UPDATE CASCADE;
+```
+
 
 
