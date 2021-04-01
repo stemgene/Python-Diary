@@ -18,6 +18,7 @@ description: >-
 | HAVING | DISTINCT |
 | UNION | UNION |
 | ORDER BY | ORDER BY |
+| LIMIT |  |
 
 ```sql
 SELECT DISTINCT Movie.MovieID,
@@ -402,5 +403,26 @@ ADD CONSTRAINT `fk_tag_User`
   ON UPDATE CASCADE;
 ```
 
+### 表内外键
 
+当表中自己和自己join时，需要在建表时就设置好外键
+
+![](../.gitbook/assets/image%20%2892%29.png)
+
+```sql
+CREATE TABLE `employees` (
+  `employee_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `job_title` varchar(50) NOT NULL,
+  `salary` int(11) NOT NULL,
+  `reports_to` int(11) DEFAULT NULL,
+  `office_id` int(11) NOT NULL,
+  PRIMARY KEY (`employee_id`),
+  KEY `fk_employees_offices_idx` (`office_id`),
+  KEY `fk_employees_employees_idx` (`reports_to`),
+  CONSTRAINT `fk_employees_managers` FOREIGN KEY (`reports_to`) REFERENCES `employees` (`employee_id`),
+  CONSTRAINT `fk_employees_offices` FOREIGN KEY (`office_id`) REFERENCES `offices` (`office_id`) ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+```
 
