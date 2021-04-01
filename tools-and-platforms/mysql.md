@@ -5,7 +5,7 @@ description: >-
 
 # MySQL
 
-## General
+## [Operators](https://app.gitbook.com/@hlj12530/s/stemgene/tools-and-platforms/mysql#operators)General
 
 | Syntactical Order of Operations | Logical Order of Operations |
 | :--- | :--- |
@@ -34,64 +34,6 @@ OFFSET 3  # omit first 3
 ```
 
 [对SQL执行顺序的理解](https://www.cnblogs.com/f-ck-need-u/p/8656828.html)：每一步操作都会得到一个虚拟的列表，FROM--ON--WHERE--GROUP BY--对分组的结果HAVING--WINDOW--DISTINCT--ORDER BY--TOP\(如果不排序，top随机挑选，所以基本都和order组合使用\)
-
-## JOIN
-
-### JOIN两个表
-
-默认的JOIN表达式就是inner join。而LEFT JOIN，RIGHT JOIN和FULL OUTER JOIN都是outer join
-
-![](../.gitbook/assets/image%20%2868%29.png)
-
-```sql
-SELECT 
-# Right join means contain all data in right table
-FROM A 
-RIGHT JOIN B 
-    ON A.key = B.key 
-    或 using (key) 当两个表的字段名一致时，可以使用using (）使语句更简单
-WHERE review.rating >= 3 # review: table, rating: col
-# join之后，新表中的字段仍可以用原来的表如B.col来表示，比如找出新表中NULL的row，就可以用原来表来索引，如leetcode1350
-```
-
-### JOIN多个表
-
-![&#x591A;&#x4E2A;&#x8868;&#x7684;inner join](../.gitbook/assets/image%20%28101%29.png)
-
-![&#x591A;&#x4E2A;&#x8868;&#x7684;outer join](../.gitbook/assets/image%20%2893%29.png)
-
-### SELF JOIN
-
-![&#x8868;&#x81EA;&#x8EAB;&#x7684;inner join](../.gitbook/assets/image%20%2899%29.png)
-
-![](../.gitbook/assets/image%20%2894%29.png)
-
-上面的表自身的join返回的结果其实是缺了CEO自己的，因为CEO对应的manager是NULL，所以此时应该用outer join来返回所有的员工
-
-![](../.gitbook/assets/image%20%28100%29.png)
-
-![](../.gitbook/assets/image%20%2895%29.png)
-
-### Compound Join Conditions一表中多个primary key的JOIN操作
-
-需要JOIN table2 ON t1.term1 = t2.term1 AND ON t1.term2 = t2.term2
-
-![](../.gitbook/assets/image%20%2897%29.png)
-
-由于上面两个表中的字段名都是一样的，可以用using简化query语句
-
-```sql
-SELECT *
-FROM order_items oi
-JOIN order_item_notes oin
-    using (order_id, product_id)
-```
-
-### Implicit Join
-
-以下两个表达式所查询出的结果是一样的，但利用implicit join一旦忘了加入where，就是两个表的outter join，会造成系统负载过大
-
-![](../.gitbook/assets/image%20%2898%29.png)
 
 ## Operators
 
@@ -187,6 +129,92 @@ WHERE month_name != 'January'
 // can use <, > or other operators 按照字母顺序来比对
 WHERE month_name > 'July'
 ```
+
+## JOIN
+
+### JOIN两个表
+
+默认的JOIN表达式就是inner join。而LEFT JOIN，RIGHT JOIN和FULL OUTER JOIN都是outer join
+
+![](../.gitbook/assets/image%20%2868%29.png)
+
+```sql
+SELECT 
+# Right join means contain all data in right table
+FROM A 
+RIGHT JOIN B 
+    ON A.key = B.key 
+    或 using (key) 当两个表的字段名一致时，可以使用using (）使语句更简单
+WHERE review.rating >= 3 # review: table, rating: col
+# join之后，新表中的字段仍可以用原来的表如B.col来表示，比如找出新表中NULL的row，就可以用原来表来索引，如leetcode1350
+```
+
+### JOIN多个表
+
+![&#x591A;&#x4E2A;&#x8868;&#x7684;inner join](../.gitbook/assets/image%20%28102%29.png)
+
+![&#x591A;&#x4E2A;&#x8868;&#x7684;outer join](../.gitbook/assets/image%20%2893%29.png)
+
+### SELF JOIN
+
+![&#x8868;&#x81EA;&#x8EAB;&#x7684;inner join](../.gitbook/assets/image%20%28100%29.png)
+
+![](../.gitbook/assets/image%20%2895%29.png)
+
+上面的表自身的join返回的结果其实是缺了CEO自己的，因为CEO对应的manager是NULL，所以此时应该用outer join来返回所有的员工
+
+![](../.gitbook/assets/image%20%28101%29.png)
+
+![](../.gitbook/assets/image%20%2896%29.png)
+
+### Compound Join Conditions一表中多个primary key的JOIN操作
+
+需要JOIN table2 ON t1.term1 = t2.term1 AND ON t1.term2 = t2.term2
+
+![](../.gitbook/assets/image%20%2898%29.png)
+
+由于上面两个表中的字段名都是一样的，可以用using简化query语句
+
+```sql
+SELECT *
+FROM order_items oi
+JOIN order_item_notes oin
+    using (order_id, product_id)
+```
+
+### Implicit Join
+
+以下两个表达式所查询出的结果是一样的，但利用implicit join一旦忘了加入where，就是两个表的outter join，会造成系统负载过大
+
+![](../.gitbook/assets/image%20%2899%29.png)
+
+## UNION 组合多个query需求，将一张表或多张表按照条件连接到一起
+
+* 组合多个query需求，在同一个结果中返回
+* 每一个单独的query返回的格式需相同
+* 可以在一张表内，或者多张表联合使用
+
+### 单张表
+
+想要把下表按照日期分类，2019年以后的为active，2019年以前的为archive
+
+```sql
+SELECT 
+  order_id,
+  order_date,
+  'Active' as 'Status'   -- 这一列是新加的纯文本列
+FROM orders
+WHERE order_date >= '2019'
+UNION
+SELECT 
+  order_id,
+  order_date,
+  'Archived' as 'Status'
+FROM orders
+WHERE order_date < '2019'
+```
+
+![](../.gitbook/assets/image%20%28103%29.png)
 
 ## 聚合Functions
 
