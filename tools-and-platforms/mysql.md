@@ -49,7 +49,7 @@ SELECT
 FROM A 
 RIGHT JOIN B 
     ON A.key = B.key 
-    或 using (key) 当两个表的字段名一致时，可以使用using (）
+    或 using (key) 当两个表的字段名一致时，可以使用using (）使语句更简单
 WHERE review.rating >= 3 # review: table, rating: col
 # join之后，新表中的字段仍可以用原来的表如B.col来表示，比如找出新表中NULL的row，就可以用原来表来索引，如leetcode1350
 ```
@@ -77,6 +77,15 @@ WHERE review.rating >= 3 # review: table, rating: col
 需要JOIN table2 ON t1.term1 = t2.term1 AND ON t1.term2 = t2.term2
 
 ![](../.gitbook/assets/image%20%2897%29.png)
+
+由于上面两个表中的字段名都是一样的，可以用using简化query语句
+
+```sql
+SELECT *
+FROM order_items oi
+JOIN order_item_notes oin
+    using (order_id, product_id)
+```
 
 ### Implicit Join
 
