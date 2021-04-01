@@ -49,7 +49,7 @@ SELECT
 FROM A 
 RIGHT JOIN B 
     ON A.key = B.key 
-    或 using (key) 当两个表的字段名一致时，可以使用using (字段名）
+    或 using (key) 当两个表的字段名一致时，可以使用using (）
 WHERE review.rating >= 3 # review: table, rating: col
 # join之后，新表中的字段仍可以用原来的表如B.col来表示，比如找出新表中NULL的row，就可以用原来表来索引，如leetcode1350
 ```
