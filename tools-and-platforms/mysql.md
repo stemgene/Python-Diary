@@ -57,17 +57,12 @@ WHERE review.rating >= 3 # review: table, rating: col
   </thead>
   <tbody>
     <tr>
-      <td style="text-align:left">LIKE<b> (wildcard matching)</b>
-      </td>
+      <td style="text-align:left">LIKE<b> </b>(wildcard matching)</td>
       <td style="text-align:left">
-        <p><b>like &#x2018;%a&#x2019;          //&#x4EE5;a&#x7ED3;&#x5C3E;&#x7684;</b>
-        </p>
-        <p><b>like &#x2018;%or%&#x2019;     //&#x542B;&#x6709;or&#x7684;&#x5143;&#x7D20;</b>
-        </p>
-        <p><b>like &#x2018;_r%&#x2019;        //&#x7B2C;&#x4E8C;&#x4F4D;&#x662F;r&#xFF0C;_&#x8868;&#x793A;&#x5355;&#x4E2A;&#x5B57;&#x7B26;</b>
-        </p>
-        <p><b>like &#x2018;a%o&#x2019;       //&#x4EE5;a&#x5F00;&#x5934;o&#x7ED3;&#x5C3E;&#x7684;</b>
-        </p>
+        <p>like &#x2018;%a&#x2019; //&#x4EE5;a&#x7ED3;&#x5C3E;&#x7684;</p>
+        <p>like &#x2018;%or%&#x2019; //&#x542B;&#x6709;or&#x7684;&#x5143;&#x7D20;</p>
+        <p>like &#x2018;_r%&#x2019; //&#x7B2C;&#x4E8C;&#x4F4D;&#x662F;r&#xFF0C;_&#x8868;&#x793A;&#x5355;&#x4E2A;&#x5B57;&#x7B26;</p>
+        <p>like &#x2018;a%o&#x2019; //&#x4EE5;a&#x5F00;&#x5934;o&#x7ED3;&#x5C3E;&#x7684;</p>
       </td>
     </tr>
     <tr>
@@ -93,6 +88,14 @@ WHERE review.rating >= 3 # review: table, rating: col
     <tr>
       <td style="text-align:left">IS</td>
       <td style="text-align:left">WHERE Review.Rating IS NULL</td>
+    </tr>
+    <tr>
+      <td style="text-align:left"></td>
+      <td style="text-align:left">
+        <p>ORDER BY state DESC, first_name ASEC --&#x5148;&#x6309;&#x7167;state&#x6392;&#x5E8F;&#xFF0C;&#x5982;&#x679C;state&#x4E00;&#x81F4;&#x518D;&#x6309;name&#x6392;</p>
+        <p>&#x5373;&#x4F7F;SELETE&#x6CA1;&#x9009;&#x4E2D;&#x6392;&#x5E8F;&#x7684;&#x5217;&#xFF0C;&#x4E5F;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8BE5;&#x5217;&#x6392;&#x5E8F;&#xFF0C;select
+          birthday order by name</p>
+      </td>
     </tr>
     <tr>
       <td style="text-align:left">EXISTS</td>
