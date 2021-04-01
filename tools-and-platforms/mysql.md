@@ -37,15 +37,52 @@ OFFSET 3  # omit first 3
 
 ## JOIN
 
+### JOIN两个表
+
+默认的JOIN表达式就是inner join。而LEFT JOIN，RIGHT JOIN和FULL OUTER JOIN都是outer join
+
 ![](../.gitbook/assets/image%20%2868%29.png)
 
 ```sql
 SELECT 
 # Right join means contain all data in right table
-FROM A RIGHT JOIN B ON A.key = B.key 
+FROM A 
+RIGHT JOIN B 
+    ON A.key = B.key 
+    或 using (key) 当两个表的字段名一致时，可以使用using (字段名）
 WHERE review.rating >= 3 # review: table, rating: col
 # join之后，新表中的字段仍可以用原来的表如B.col来表示，比如找出新表中NULL的row，就可以用原来表来索引，如leetcode1350
 ```
+
+### JOIN多个表
+
+![&#x591A;&#x4E2A;&#x8868;&#x7684;inner join](../.gitbook/assets/image%20%28101%29.png)
+
+![&#x591A;&#x4E2A;&#x8868;&#x7684;outer join](../.gitbook/assets/image%20%2893%29.png)
+
+### SELF JOIN
+
+![&#x8868;&#x81EA;&#x8EAB;&#x7684;inner join](../.gitbook/assets/image%20%2899%29.png)
+
+![](../.gitbook/assets/image%20%2894%29.png)
+
+上面的表自身的join返回的结果其实是缺了CEO自己的，因为CEO对应的manager是NULL，所以此时应该用outer join来返回所有的员工
+
+![](../.gitbook/assets/image%20%28100%29.png)
+
+![](../.gitbook/assets/image%20%2895%29.png)
+
+### Compound Join Conditions一表中多个primary key的JOIN操作
+
+需要JOIN table2 ON t1.term1 = t2.term1 AND ON t1.term2 = t2.term2
+
+![](../.gitbook/assets/image%20%2897%29.png)
+
+### Implicit Join
+
+以下两个表达式所查询出的结果是一样的，但利用implicit join一旦忘了加入where，就是两个表的outter join，会造成系统负载过大
+
+![](../.gitbook/assets/image%20%2898%29.png)
 
 ## Operators
 
