@@ -71,12 +71,24 @@ WHERE review.rating >= 3 # review: table, rating: col
       </td>
     </tr>
     <tr>
+      <td style="text-align:left">REGEXP</td>
+      <td style="text-align:left">
+        <p>regexp &apos;a&apos; -- &#x5305;&#x542B;&#x4EFB;&#x4F55;a(A)&#x7684;</p>
+        <p>regexp &apos;^a&apos; -- &#x4EE5;a(A)&#x5F00;&#x5934;&#x7684;</p>
+        <p>regexp &apos;a$&apos; -- &#x4EE5;a(A)&#x7ED3;&#x5C3E;&#x7684;</p>
+        <p>regexp &apos;a|b|c&apos; -- &#x5305;&#x542B;a&#x6216;b&#x6216;c</p>
+        <p>regexp &apos;[gim]e&apos; --&#x5305;&#x542B;ge&#x6216;ie&#x6216;me&#x7684;</p>
+        <p>regexp &apos;[a-d]e&apos; --&#x5305;&#x542B;ae&#x6216;be&#x6216;ce&#x6216;de&#x7684;</p>
+      </td>
+    </tr>
+    <tr>
       <td style="text-align:left">BETWEEN</td>
       <td style="text-align:left"></td>
     </tr>
     <tr>
       <td style="text-align:left">IN</td>
-      <td style="text-align:left"></td>
+      <td style="text-align:left">&#x590D;&#x9009;&#x547D;&#x4EE4;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; where
+        &#x5217; = term1 or term2 or term...</td>
     </tr>
     <tr>
       <td style="text-align:left">IS</td>
@@ -125,8 +137,6 @@ WHERE month_name != 'January'
 // can use <, > or other operators 按照字母顺序来比对
 WHERE month_name > 'July'
 ```
-
-
 
 ## 聚合Functions
 
@@ -377,6 +387,8 @@ Self Join
 创建外键时需要额外定义DELETE或UPDATE时该如何操作。
 
 ### 更新时相应更新CASCADE
+
+{% embed url="https://www.youtube.com/watch?v=4JhXRll-jkQ" %}
 
 ```sql
 在tag表中：
