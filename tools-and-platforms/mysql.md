@@ -151,19 +151,19 @@ WHERE review.rating >= 3 # review: table, rating: col
 
 ### JOIN多个表
 
-![&#x591A;&#x4E2A;&#x8868;&#x7684;inner join](../.gitbook/assets/image%20%28103%29.png)
+![&#x591A;&#x4E2A;&#x8868;&#x7684;inner join](../.gitbook/assets/image%20%28105%29.png)
 
 ![&#x591A;&#x4E2A;&#x8868;&#x7684;outer join](../.gitbook/assets/image%20%2893%29.png)
 
 ### SELF JOIN
 
-![&#x8868;&#x81EA;&#x8EAB;&#x7684;inner join](../.gitbook/assets/image%20%28100%29.png)
+![&#x8868;&#x81EA;&#x8EAB;&#x7684;inner join](../.gitbook/assets/image%20%28101%29.png)
 
 ![](../.gitbook/assets/image%20%2895%29.png)
 
 上面的表自身的join返回的结果其实是缺了CEO自己的，因为CEO对应的manager是NULL，所以此时应该用outer join来返回所有的员工
 
-![](../.gitbook/assets/image%20%28101%29.png)
+![](../.gitbook/assets/image%20%28102%29.png)
 
 ![](../.gitbook/assets/image%20%2896%29.png)
 
@@ -215,11 +215,11 @@ FROM orders
 WHERE order_date < '2019'
 ```
 
-![](../.gitbook/assets/image%20%28106%29.png)
+![](../.gitbook/assets/image%20%28109%29.png)
 
 ### 多张表
 
-![](../.gitbook/assets/image%20%28102%29.png)
+![](../.gitbook/assets/image%20%28103%29.png)
 
 ## 聚合Functions
 
@@ -465,22 +465,92 @@ Self Join
 [https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/](https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/)  
 
 
-## 外键约束
+## 表与表之间的关系
 
-创建外键时需要额外定义DELETE或UPDATE时该如何操作。
+### Many to Many
+
+如果两个表的关系是Many-to-Many，如students对应teachers，需要中间一个表保存对应关系
+
+![&#x4E2D;&#x95F4;&#x7684;&#x8868;&#x4FDD;&#x5B58;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;](../.gitbook/assets/image%20%28104%29.png)
+
+Query查询的时候，可以从左向右依次查，如先JOIN students和students\_teachers on `student_id`，然后再JOIN students\_teachers和teachers on `teacher_id`。
+
+
+
+
+
+![](../.gitbook/assets/image%20%28100%29.png)
+
+## 外键约束 
+
+{% embed url="https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html" %}
+
+创建外键时需要额外定义DELETE或UPDATE时该如何操作。要明确parent和child的关系，带REFERENCE的是parent，如果parent删除，child要跟着删除。但反过来则没有限制。对于UPDATE，可以参考category对应着variable，如果category表的id变化从2变为3，那variable表中的category也统一变为3
+
+TIPs：通过Workbench创建sql时，有可能不成功。因为Workbench默认情况下会执行safe策略，即不执行关联删除等容易把数据清空的操作，此时可以在设置中更改。
 
 ### 更新时相应更新CASCADE
 
 {% embed url="https://www.youtube.com/watch?v=4JhXRll-jkQ" %}
 
 ```sql
-在tag表中：
-ADD CONSTRAINT `fk_tag_User`
-  FOREIGN KEY (`User_id`)
-  REFERENCES `User` (`id`)
-  ON DELETE CASCADE
-  ON UPDATE CASCADE;
+CREATE TABLE parent (
+    id INT NOT NULL,
+    PRIMARY KEY (id)
+) ENGINE=INNODB;
+
+CREATE TABLE child (
+    id INT,
+    parent_id INT,
+    INDEX par_ind (parent_id),
+    FOREIGN KEY (parent_id)
+        REFERENCES parent(id) -- 上一级，如果parent表删除，此表跟着删除
+        ON DELETE CASCADE
+) ENGINE=INNODB;
+
+reference_option:
+    RESTRICT | CASCADE | SET NULL | NO ACTION | SET DEFAULT
+
 ```
+
+下面的表就比较复杂，`product_order`有两个FK对应着两张表，一个对应着只有两列index的`product`表。另一个对应着单行index的`customer`表
+
+```sql
+CREATE TABLE customer (
+    id INT NOT NULL,
+    PRIMARY KEY (id)
+)   ENGINE=INNODB;
+
+CREATE TABLE product (
+    category INT NOT NULL, id INT NOT NULL,
+    price DECIMAL,
+    PRIMARY KEY(category, id)
+)   ENGINE=INNODB;
+
+CREATE TABLE product_order (
+    no INT NOT NULL AUTO_INCREMENT,
+    product_category INT NOT NULL,
+    product_id INT NOT NULL,
+    customer_id INT NOT NULL,
+
+    PRIMARY KEY(no),
+    INDEX (product_category, product_id),
+    INDEX (customer_id),
+
+    FOREIGN KEY (product_category, product_id)
+      REFERENCES product(category, id)
+      ON UPDATE CASCADE ON DELETE RESTRICT,
+
+    FOREIGN KEY (customer_id)
+      REFERENCES customer(id)
+)   ENGINE=INNODB;
+```
+
+![](../.gitbook/assets/image%20%28107%29.png)
+
+{% embed url="https://www.youtube.com/watch?v=-c7PXt7i37A" %}
+
+
 
 ### 表内外键
 
@@ -509,7 +579,7 @@ CREATE TABLE `employees` (
 
 当两个表需要同时写入数据，而其中一张表又跟上一张表有FK约束关系，可以用`LAST_INSERT_ID`来获取前一张表中插入的ID，下图中，两个`LAST_INSERT_ID`的值都是一样的。
 
-![](../.gitbook/assets/image%20%28104%29.png)
+![](../.gitbook/assets/image%20%28106%29.png)
 
 ## Subquery
 
@@ -517,9 +587,9 @@ CREATE TABLE `employees` (
 
 **Hint：**可以先单独执行subquery，确定返回的内容再说。
 
-![Subquery&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x5355;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28107%29.png)
+![Subquery&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x5355;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28110%29.png)
 
-![Subquery&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28105%29.png)
+![Subquery&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28108%29.png)
 
 ## 参考资料
 
