@@ -521,3 +521,9 @@ CREATE TABLE `employees` (
 
 ![Subquery&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28105%29.png)
 
+## 参考资料
+
+{% embed url="https://www.youtube.com/watch?v=7S\_tz1z\_5bA" %}
+
+
+
