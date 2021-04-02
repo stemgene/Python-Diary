@@ -5,7 +5,7 @@ description: >-
 
 # MySQL
 
-## [Operators](https://app.gitbook.com/@hlj12530/s/stemgene/tools-and-platforms/mysql#operators)General
+## General
 
 | Syntactical Order of Operations | Logical Order of Operations |
 | :--- | :--- |
@@ -151,7 +151,7 @@ WHERE review.rating >= 3 # review: table, rating: col
 
 ### JOIN多个表
 
-![&#x591A;&#x4E2A;&#x8868;&#x7684;inner join](../.gitbook/assets/image%20%28102%29.png)
+![&#x591A;&#x4E2A;&#x8868;&#x7684;inner join](../.gitbook/assets/image%20%28103%29.png)
 
 ![&#x591A;&#x4E2A;&#x8868;&#x7684;outer join](../.gitbook/assets/image%20%2893%29.png)
 
@@ -193,6 +193,7 @@ JOIN order_item_notes oin
 * 组合多个query需求，在同一个结果中返回
 * 每一个单独的query返回的格式需相同
 * 可以在一张表内，或者多张表联合使用
+* 多张表时，column的title是第一个query的标题
 
 ### 单张表
 
@@ -214,7 +215,11 @@ FROM orders
 WHERE order_date < '2019'
 ```
 
-![](../.gitbook/assets/image%20%28103%29.png)
+![](../.gitbook/assets/image%20%28106%29.png)
+
+### 多张表
+
+![](../.gitbook/assets/image%20%28102%29.png)
 
 ## 聚合Functions
 
@@ -499,4 +504,20 @@ CREATE TABLE `employees` (
   CONSTRAINT `fk_employees_offices` FOREIGN KEY (`office_id`) REFERENCES `offices` (`office_id`) ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 ```
+
+### 插入Hierarchical Rows值
+
+当两个表需要同时写入数据，而其中一张表又跟上一张表有FK约束关系，可以用`LAST_INSERT_ID`来获取前一张表中插入的ID，下图中，两个`LAST_INSERT_ID`的值都是一样的。
+
+![](../.gitbook/assets/image%20%28104%29.png)
+
+## Subquery
+
+最简单的Subquery的例子就是只知道name而先要通过name去寻找对应的id，然后再通过这个id去另一个表中进行检索。具体执行的方法，可以从外向内写，如先把最终要的结果写出来，然后再去写WHERE后的subquery。也可以是从内向外写，就是先看看name对应的那个表能提供什么信息，然后再去写外包的query。
+
+**Hint：**可以先单独执行subquery，确定返回的内容再说。
+
+![Subquery&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x5355;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28107%29.png)
+
+![Subquery&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28105%29.png)
 
