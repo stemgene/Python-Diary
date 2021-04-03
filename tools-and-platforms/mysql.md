@@ -487,11 +487,16 @@ Query查询的时候，可以从左向右依次查，如先JOIN students和stude
 
 创建外键时需要额外定义DELETE或UPDATE时该如何操作。要明确parent和child的关系，带REFERENCE的是parent，如果parent删除，child要跟着删除。但反过来则没有限制。对于UPDATE，可以参考category对应着variable，如果category表的id变化从2变为3，那variable表中的category也统一变为3
 
-TIPs：通过Workbench创建sql时，有可能不成功。因为Workbench默认情况下会执行safe策略，即不执行关联删除等容易把数据清空的操作，此时可以在设置中更改。
+TIPs：
+
+* 通过Workbench创建sql时，有可能不成功。因为Workbench默认情况下会执行safe策略，即不执行关联删除等容易把数据清空的操作，此时可以在设置中更改。
+* 当调试时需要删除某表但因为FK约束而报错。此时可以临时取消所有FK的限制`SET foreign_key_checks = 0;`然后就可以正常删除了，当然删除后别忘了再改回1。
 
 ### 更新时相应更新CASCADE
 
 {% embed url="https://www.youtube.com/watch?v=4JhXRll-jkQ" %}
+
+外键并不是通过列名实现的，而是通过定义外键约束实现的：
 
 ```sql
 CREATE TABLE parent (
