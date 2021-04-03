@@ -559,6 +559,10 @@ CREATE TABLE product_order (
 
 ### 表内外键
 
+{% embed url="https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html" %}
+
+{% embed url="https://pencilprogrammer.com/self-referencing-foreign-key-in-mysql/" %}
+
 当表中自己和自己join时，需要在建表时就设置好外键
 
 ![](../.gitbook/assets/image%20%2892%29.png)
