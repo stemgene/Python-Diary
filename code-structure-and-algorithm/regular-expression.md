@@ -1,5 +1,7 @@
 # Regular Expression
 
+[https://www.youtube.com/watch?v=rhzKDrUiJVk](https://www.youtube.com/watch?v=rhzKDrUiJVk)
+
 从简单的例子开始：如果直接给出字符，就是精确匹配，用`\d`可以匹配一个数字，`\w`可以匹配一个字母或数字，所以：
 
 * `'00\d'`可以匹配`'007'`，但无法匹配`'00A'`；
@@ -63,17 +65,18 @@
 
 正则表达式匹配从指定字符开始到指定字符结束的字符串
 
-1.  a.\*?b就是a开始b结束的匹配
+1. \
+   a.\*?b就是a开始b结束的匹配
 2. 如果要限制是一行的开头和末尾的话，就是^a.\*?b$
 
-```text
+```
 var phrase = "yesthisismyphrase=thisiswhatIwantmatched"; 
 var myRegexp = /phrase=(.*)/;
 var match = myRegexp.exec(phrase);
 alert(match[1]);
 ```
 
-```text
+```
 var str = 'http://zhipur.com/item?data=SN120180525FEOCE'; 
 var code1 = str.match(/\?data=(.*)/)[1];//取 ?data=后面所有字符串
 var code2 = str.match(/data=(.*)/)[1];//取 data=后面所有字符串
@@ -83,5 +86,4 @@ console.log('data= 后的内容为: '+code2);
 console.log('包含 data= 的所有内容为: '+code3);
 ```
 
-正则匹配之后返回是一串array，需要用\[0\]或\[1\]等选择具体的内容
-
+正则匹配之后返回是一串array，需要用\[0]或\[1]等选择具体的内容
