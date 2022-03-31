@@ -6,9 +6,138 @@ description: >-
 
 # Libraries
 
+## Numpy
+
+### Array
+
+#### Create Array
+
+创建Array，可以看到虽然和list一样都是用\[brackets]括起来的，但components之间并没有逗号。
+
+```python
+a = np.array([1,2,3,4])
+print("a:\n", a)
+a.shape
+
+## a:
+##  [1 2 3 4]
+## (4, )
+```
+
+**创建二维矩阵**用list of lists，每一个sublist代表一行
+
+```python
+b = np.array([[1,2], [3,4]])
+print("b:\n", b)
+b.shape
+
+## b:
+##  [[1 2]
+##  [3 4]]
+## (2, 2)
+```
+
+**reshape**:&#x20;
+
+```python
+a.reshape((2,2))
+
+## array([[1, 2],
+##        [3, 4]])py
+```
+
+**np.arange**
+
+```python
+np.arange(10).reshape((2,5))  # 2x5 matrix
+
+
+## array([[0, 1, 2, 3, 4],
+##        [5, 6, 7, 8, 9]])
+```
+
+**np.zeros, np.ones**
+
+```python
+np.zeros((5,))
+np.ones((2,4))
+
+## array([0., 0., 0., 0., 0.])
+## array([[1., 1., 1., 1.],
+##        [1., 1., 1., 1.]])
+```
+
+#### Universal Functions
+
+```python
+a = np.arange(12).reshape((3,4))
+print(a)
+
+## [[ 0  1  2  3]
+##  [ 4  5  6  7]
+##  [ 8  9 10 11]]
+
+print(100 + a, '\n')
+## [[100 101 102 103]
+##  [104 105 106 107]
+##  [108 109 110 111]]
+
+print(2**a, "\n")  # remember: exponent with **, not with ^
+## [[   1    2    4    8]
+##  [  16   32   64  128]
+##  [ 256  512 1024 2048]]
+
+# Comparison operators
+(a < 3) | (a > 8)  # logical or
+
+## array([[ True,  True,  True, False],
+##        [False, False, False, False],
+##        [False,  True,  True,  True]])
+```
+
+### Array Indexing and Slicing
+
+#### Extracting elements based on position
+
+```python
+a = np.arange(12)
+print(a[::2])  # every second element
+
+## [ 0  2  4  6  8 10]
+
+a[5:11] = -1
+## array([ 0,  1,  2,  3,  4, -1, -1, -1, -1, -1, -1, 11])
+```
+
+When working with matrices (2-D arrays), need two indices
+
+```
+c[1,2]   # 2nd row, 3rd column
+c[1] # 2nd row
+## array([4, 5, 6, 7])
+```
+
+Comma can separate not just two indices but two slices, so we can write
+
+```
+c[:,2]  # all rows, 3rd column
+
+## array([ 2,  6, 10])
+
+c[:2]  # 1st, 2nd row
+## array([[0, 1, 2, 3],
+##        [4, 5, 6, 7]])
+
+c[:2, :3]  # 1s, 2nd row, first three columns
+## array([[0, 1, 2],
+##        [4, 5, 6]])
+```
+
+
+
 ## Directory Structure
 
-```text
+```
 $ pwd
 /path/to/project/directory/
 
@@ -109,7 +238,7 @@ sys.path returns a list, so we can use `sys.path.append("引用模块的地址")
 
 {% embed url="https://zhuanlan.zhihu.com/p/87940289" %}
 
-```text
+```
 |- in/
    |- input.xlsx
 |- out/
@@ -153,5 +282,4 @@ print(filename.stem)
 
 ## Frequence Pattern Mining
 
-### [Apriori](http://rasbt.github.io/mlxtend/user_guide/frequent_patterns/apriori/)
-
+### [Apriori](http://rasbt.github.io/mlxtend/user\_guide/frequent\_patterns/apriori/)
