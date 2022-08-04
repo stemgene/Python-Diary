@@ -4,7 +4,7 @@
 
 ## Python
 
----
+***
 
 * [Pandas Profiling Report](untitled-1.md)
 * [Libraries](untitled.md)
@@ -46,7 +46,8 @@
 
 ## Tools & Platforms
 
-* [MySQL](tools-and-platforms/mysql.md)
+* [MySQL](tools-and-platforms/mysql/README.md)
+  * [String & Regexp](tools-and-platforms/mysql/string-and-regexp.md)
 * [Github](tools-and-platforms/github/README.md)
   * [SSH访问](tools-and-platforms/github/ssh-fang-wen.md)
   * [通过vscode访问](tools-and-platforms/github/tong-guo-vscode-fang-wen.md)
@@ -69,4 +70,3 @@
 * [Graph-based基于图的模型](other-topics/graphbased-ji-yu-tu-de-mo-xing.md)
 * [Insight project idea](other-topics/insight-project.md)
 * [Time Series](other-topics/time-series.md)
-

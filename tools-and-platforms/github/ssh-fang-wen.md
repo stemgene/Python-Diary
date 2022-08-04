@@ -6,56 +6,56 @@
 
 1.在github网站新建一个repository
 
-![](../../.gitbook/assets/image%20%2810%29.png)
+![](<../../.gitbook/assets/image (10).png>)
 
-2. 进入本机想要关联的文件夹，然后依次输入
+2\. 进入本机想要关联的文件夹，然后依次输入
 
-```text
+```
 git init
 git add .
 git commit -m 'First commit'
 ```
 
-3. 复制repository的URL
+3\. 复制repository的URL
 
-![](../../.gitbook/assets/image%20%2826%29.png)
+![](<../../.gitbook/assets/image (26).png>)
 
-4. 添加URL地址到本地文件夹的git中
+4\. 添加URL地址到本地文件夹的git中
 
-```text
+```
 git remote add origin 刚才的url
 git remote -v
 ```
 
-5. 生成ssh key
+5\. 生成ssh key
 
-```text
+```
 ssh-keygen -t rsa -C "github邮箱" -b 4096 -f ~/.ssh/id_rsa_github
 # add key to ssh-key chain
 #有时候，会提示没有public key，此时需要重新配置一下config文件
 ssh-add -K ~/.ssh/id_rsa_github
 ```
 
-6. edit config文件
+6\. edit config文件
 
-```text
+```
 Host InsightDS
   AddKeysToAgent yes
   UseKeychain yes
   IdentityFile ~/.ssh/id_rsa_github
 ```
 
-```text
+```
 chmod 600 ~/.ssh/config
 ```
 
-7. 将public key上传到github中，在setting中有SSH配置选项，添加public key
+7\. 将public key上传到github中，在setting中有SSH配置选项，添加public key
 
-![](../../.gitbook/assets/image%20%2831%29.png)
+![](<../../.gitbook/assets/image (31).png>)
 
-8. 测试联通情况
+8\. 测试联通情况
 
-```text
+```
 ssh -T git@github.com
 git push -u origin master
 ```
@@ -64,7 +64,7 @@ git push -u origin master
 
 ## 基本git指令
 
-```text
+```
 git status
 git log
 # basic
@@ -77,6 +77,4 @@ git push origin master
 ```
 
 [https://guides.github.com/activities/hello-world/](https://guides.github.com/activities/hello-world/)
-
-
 

@@ -8,17 +8,17 @@ description: >-
 ## General
 
 | Syntactical Order of Operations | Logical Order of Operations |
-| :--- | :--- |
-| SELECT | FROM |
-| DISTINCT | WHERE |
-| AGGREGATIONS | GROUP BY |
-| FROM | AGGREGATION |
-| WHERE | HAVING |
-| GROUP BY | SELECT |
-| HAVING | DISTINCT |
-| UNION | UNION |
-| ORDER BY | ORDER BY |
-| LIMIT |  |
+| ------------------------------- | --------------------------- |
+| SELECT                          | FROM                        |
+| DISTINCT                        | WHERE                       |
+| AGGREGATIONS                    | GROUP BY                    |
+| FROM                            | AGGREGATION                 |
+| WHERE                           | HAVING                      |
+| GROUP BY                        | SELECT                      |
+| HAVING                          | DISTINCT                    |
+| UNION                           | UNION                       |
+| ORDER BY                        | ORDER BY                    |
+| LIMIT                           |                             |
 
 ```sql
 SELECT DISTINCT Movie.MovieID,
@@ -33,94 +33,25 @@ OFFSET 3  # omit first 3
 # LIMIT和OFFSET是一种分页查询的组合
 ```
 
-[对SQL执行顺序的理解](https://www.cnblogs.com/f-ck-need-u/p/8656828.html)：每一步操作都会得到一个虚拟的列表，FROM--ON--WHERE--GROUP BY--对分组的结果HAVING--WINDOW--DISTINCT--ORDER BY--TOP\(如果不排序，top随机挑选，所以基本都和order组合使用\)
+[对SQL执行顺序的理解](https://www.cnblogs.com/f-ck-need-u/p/8656828.html)：每一步操作都会得到一个虚拟的列表，FROM--ON--WHERE--GROUP BY--对分组的结果HAVING--WINDOW--DISTINCT--ORDER BY--TOP(如果不排序，top随机挑选，所以基本都和order组合使用)
 
 ## Operators
 
-<table>
-  <thead>
-    <tr>
-      <th style="text-align:left">Operators</th>
-      <th style="text-align:left">Examples</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align:left">LIKE<b> </b>(wildcard matching)</td>
-      <td style="text-align:left">
-        <p>like &#x2018;%a&#x2019; //&#x4EE5;a&#x7ED3;&#x5C3E;&#x7684;</p>
-        <p>like &#x2018;%or%&#x2019; //&#x542B;&#x6709;or&#x7684;&#x5143;&#x7D20;</p>
-        <p>like &#x2018;_r%&#x2019; //&#x7B2C;&#x4E8C;&#x4F4D;&#x662F;r&#xFF0C;_&#x8868;&#x793A;&#x5355;&#x4E2A;&#x5B57;&#x7B26;</p>
-        <p>like &#x2018;a%o&#x2019; //&#x4EE5;a&#x5F00;&#x5934;o&#x7ED3;&#x5C3E;&#x7684;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">REGEXP</td>
-      <td style="text-align:left">
-        <p>regexp &apos;a&apos; -- &#x5305;&#x542B;&#x4EFB;&#x4F55;a(A)&#x7684;</p>
-        <p>regexp &apos;^a&apos; -- &#x4EE5;a(A)&#x5F00;&#x5934;&#x7684;</p>
-        <p>regexp &apos;a$&apos; -- &#x4EE5;a(A)&#x7ED3;&#x5C3E;&#x7684;</p>
-        <p>regexp &apos;a|b|c&apos; -- &#x5305;&#x542B;a&#x6216;b&#x6216;c</p>
-        <p>regexp &apos;[gim]e&apos; --&#x5305;&#x542B;ge&#x6216;ie&#x6216;me&#x7684;</p>
-        <p>regexp &apos;[a-d]e&apos; --&#x5305;&#x542B;ae&#x6216;be&#x6216;ce&#x6216;de&#x7684;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">BETWEEN</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">IN</td>
-      <td style="text-align:left">&#x590D;&#x9009;&#x547D;&#x4EE4;&#xFF0C;&#x76F8;&#x5F53;&#x4E8E; where
-        &#x5217; = term1 or term2 or term...</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">IS</td>
-      <td style="text-align:left">WHERE Review.Rating IS NULL</td>
-    </tr>
-    <tr>
-      <td style="text-align:left"></td>
-      <td style="text-align:left">
-        <p>ORDER BY state DESC, first_name ASEC --&#x5148;&#x6309;&#x7167;state&#x6392;&#x5E8F;&#xFF0C;&#x5982;&#x679C;state&#x4E00;&#x81F4;&#x518D;&#x6309;name&#x6392;</p>
-        <p>&#x5373;&#x4F7F;SELETE&#x6CA1;&#x9009;&#x4E2D;&#x6392;&#x5E8F;&#x7684;&#x5217;&#xFF0C;&#x4E5F;&#x4ECD;&#x7136;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x8BE5;&#x5217;&#x6392;&#x5E8F;&#xFF0C;select
-          birthday order by name</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">EXISTS</td>
-      <td style="text-align:left"></td>
-    </tr>
-    <tr>
-      <td style="text-align:left">CAST</td>
-      <td style="text-align:left">
-        <p>CAST&#x51FD;&#x6570;&#x7528;&#x4E8E;&#x5C06;&#x67D0;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x7684;&#x8868;&#x8FBE;&#x5F0F;&#x663E;&#x5F0F;&#x8F6C;&#x6362;&#x4E3A;&#x53E6;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7C7B;&#x578B;&#x3002;</p>
-        <p>&#x8BED;&#x6CD5;&#xFF1A;CAST (expression AS data_type)</p>
-        <p>CAST(&apos;9.5&apos; AS decimal(10, 2))# &#x7CBE;&#x5EA6;&#x4E0E;&#x5C0F;&#x6570;&#x4F4D;&#x6570;&#x5206;&#x522B;&#x4E3A;10&#x4E0E;2&#x3002;&#x7CBE;&#x5EA6;&#x662F;&#x603B;&#x7684;&#x6570;&#x5B57;&#x4F4D;&#x6570;&#xFF0C;&#x5305;&#x62EC;&#x5C0F;&#x6570;&#x70B9;&#x5DE6;&#x8FB9;&#x548C;&#x53F3;&#x8FB9;&#x4F4D;&#x6570;&#x7684;&#x603B;&#x548C;&#x3002;&#x800C;&#x5C0F;&#x6570;&#x4F4D;&#x6570;&#x662F;&#x5C0F;&#x6570;&#x70B9;&#x53F3;&#x8FB9;&#x7684;&#x4F4D;&#x6570;</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">%&#x53D6;&#x4F59;&#x6570;</td>
-      <td style="text-align:left">
-        <p>&#x5076;&#x6570; num%2 = 0</p>
-        <p>&#x5947;&#x6570; num%2 = 1</p>
-      </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">LEN()</td>
-      <td style="text-align:left">&#x5B57;&#x7B26;&#x4E32;&#x957F;&#x5EA6;</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">substr()</td>
-      <td style="text-align:left">
-        <p>substr(string ,num start,num length)</p>
-        <p>where lower(substr(city,1,1)) in (&apos;a&apos;,&apos;e&apos;,&apos;i&apos;,&apos;o&apos;,&apos;u&apos;);
-          #&#x5F00;&#x5934;&#x5B57;&#x6BCD;&#x662F;&#x5143;&#x97F3;</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Operators                     | Examples                                                                                                                                                                                                             |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| LIKE **** (wildcard matching) | <p>like ‘%a’          //以a结尾的</p><p>like ‘%or%’     //含有or的元素</p><p>like ‘_r%’        //第二位是r，_表示单个字符</p><p>like ‘a%o’       //以a开头o结尾的</p>                                                                          |
+| REGEXP                        | <p>regexp 'a'       -- 包含任何a(A)的</p><p>regexp '^a'     -- 以a(A)开头的</p><p>regexp 'a$'    -- 以a(A)结尾的</p><p>regexp 'a|b|c' -- 包含a或b或c</p><p>regexp '[gim]e'  --包含ge或ie或me的</p><p>regexp '[a-d]e'  --包含ae或be或ce或de的</p> |
+| BETWEEN                       |                                                                                                                                                                                                                      |
+| IN                            | 复选命令，相当于 where 列 = term1 or term2 or term...                                                                                                                                                                         |
+| IS                            | WHERE Review.Rating IS NULL                                                                                                                                                                                          |
+|                               | <p>ORDER BY state DESC, first_name ASEC  --先按照state排序，如果state一致再按name排</p><p>即使SELETE没选中排序的列，也仍然可以按照该列排序，select birthday order by name</p>                                                                           |
+| EXISTS                        |                                                                                                                                                                                                                      |
+| CAST                          | <p>CAST函数用于将某种数据类型的表达式显式转换为另一种数据类型。</p><p>语法：CAST (expression AS data_type)</p><p>CAST('9.5' AS decimal(10, 2))# 精度与小数位数分别为10与2。精度是总的数字位数，包括小数点左边和右边位数的总和。而小数位数是小数点右边的位数</p>                                         |
+| %取余数                          | <p>偶数 num%2 = 0</p><p>奇数 num%2 = 1</p>                                                                                                                                                                               |
+| LEN()                         | 字符串长度                                                                                                                                                                                                                |
+| substr()                      | <p>substr(string ,num start,num length)</p><p>where lower(substr(city,1,1)) in ('a','e','i','o','u'); #开头字母是元音</p>                                                                                                   |
 
-SQL的comparison operators，=, !=, &lt;, &lt;=, &gt;, &gt;=不仅可以用在numerical data，对于字符串等非数字型的数据也可以。**但是需要注意的是必须用单引号来框上该变量，SQL中用单引号来引用column中的值。**  
+SQL的comparison operators，=, !=, <, <=, >, >=不仅可以用在numerical data，对于字符串等非数字型的数据也可以。**但是需要注意的是必须用单引号来框上该变量，SQL中用单引号来引用column中的值。** &#x20;
 
 ```sql
 SELECT *
@@ -136,7 +67,7 @@ WHERE month_name > 'July'
 
 默认的JOIN表达式就是inner join。而LEFT JOIN，RIGHT JOIN和FULL OUTER JOIN都是outer join
 
-![](../.gitbook/assets/image%20%2868%29.png)
+![](<../../.gitbook/assets/image (68).png>)
 
 ```sql
 SELECT 
@@ -151,27 +82,27 @@ WHERE review.rating >= 3 # review: table, rating: col
 
 ### JOIN多个表
 
-![&#x591A;&#x4E2A;&#x8868;&#x7684;inner join](../.gitbook/assets/image%20%28105%29.png)
+![多个表的inner join](<../../.gitbook/assets/image (105).png>)
 
-![&#x591A;&#x4E2A;&#x8868;&#x7684;outer join](../.gitbook/assets/image%20%2893%29.png)
+![多个表的outer join](<../../.gitbook/assets/image (93).png>)
 
 ### SELF JOIN
 
-![&#x8868;&#x81EA;&#x8EAB;&#x7684;inner join](../.gitbook/assets/image%20%28101%29.png)
+![表自身的inner join](<../../.gitbook/assets/image (101).png>)
 
-![](../.gitbook/assets/image%20%2895%29.png)
+![](<../../.gitbook/assets/image (95).png>)
 
 上面的表自身的join返回的结果其实是缺了CEO自己的，因为CEO对应的manager是NULL，所以此时应该用outer join来返回所有的员工
 
-![](../.gitbook/assets/image%20%28102%29.png)
+![](<../../.gitbook/assets/image (102).png>)
 
-![](../.gitbook/assets/image%20%2896%29.png)
+![](<../../.gitbook/assets/image (96).png>)
 
 ### Compound Join Conditions一表中多个primary key的JOIN操作
 
 需要JOIN table2 ON t1.term1 = t2.term1 AND ON t1.term2 = t2.term2
 
-![](../.gitbook/assets/image%20%2898%29.png)
+![](<../../.gitbook/assets/image (98).png>)
 
 由于上面两个表中的字段名都是一样的，可以用using简化query语句
 
@@ -186,7 +117,7 @@ JOIN order_item_notes oin
 
 以下两个表达式所查询出的结果是一样的，但利用implicit join一旦忘了加入where，就是两个表的outter join，会造成系统负载过大
 
-![](../.gitbook/assets/image%20%2899%29.png)
+![](<../../.gitbook/assets/image (99).png>)
 
 ## UNION 组合多个query需求，将一张表或多张表按照条件连接到一起
 
@@ -215,20 +146,20 @@ FROM orders
 WHERE order_date < '2019'
 ```
 
-![](../.gitbook/assets/image%20%28109%29.png)
+![](<../../.gitbook/assets/image (109).png>)
 
 ### 多张表
 
-![](../.gitbook/assets/image%20%28103%29.png)
+![](<../../.gitbook/assets/image (103).png>)
 
 ## 聚合Functions
 
-| Functions | Examples |
-| :--- | :--- |
-| MAX, MIN, AVG, SUM |  |
-| COUNT | 聚合的计算结果虽然是一个数字，但查询的结果仍然是一个二维表，只是这个二维表只有一行一列，并且列名是`COUNT(*)。COUNT(*)`和`COUNT(id)`实际上是一样的效果。 |
-|  |  |
-| COUNT\(DISTINCT\) |  |
+| Functions          | Examples                                                                                   |
+| ------------------ | ------------------------------------------------------------------------------------------ |
+| MAX, MIN, AVG, SUM |                                                                                            |
+| COUNT              | 聚合的计算结果虽然是一个数字，但查询的结果仍然是一个二维表，只是这个二维表只有一行一列，并且列名是`COUNT(*)。COUNT(*)`和`COUNT(id)`实际上是一样的效果。 |
+|                    |                                                                                            |
+| COUNT(DISTINCT)    |                                                                                            |
 
 ```sql
 # 分组聚合
@@ -264,7 +195,7 @@ GROUP BY Movie.MovieID, Movie.Title
 HAVING AVG(Rating) < 3
 ```
 
-## [Window Function](https://learnsql.com/blog/sql-window-functions-cheat-sheet/Window_Functions_Cheat_Sheet.pdf)
+## [Window Function](https://learnsql.com/blog/sql-window-functions-cheat-sheet/Window\_Functions\_Cheat\_Sheet.pdf)
 
 It is a function that performs calculations across a set of table rows. The rows are somehow related to the current row.
 
@@ -279,9 +210,9 @@ It is a function that performs calculations across a set of table rows. The rows
 
 Example 1: 没用聚合函数，也可以实现sum，avg等功能
 
-Typically, `OVER()` is used to compare the current row with an aggregate. For example, we can compute the difference between employee's salary and the average salary. 
+Typically, `OVER()` is used to compare the current row with an aggregate. For example, we can compute the difference between employee's salary and the average salary.&#x20;
 
-over与where：需要注意的是over\(\)只计算返回的表的所有值，如果添加了where限制条件，over\(\)只计算where之后的。而且over\(\)不能放在where内，如`WHERE salary > AVG(salary) OVER ()是错的`
+over与where：需要注意的是over()只计算返回的表的所有值，如果添加了where限制条件，over()只计算where之后的。而且over()不能放在where内，如`WHERE salary > AVG(salary) OVER ()是错的`
 
 Example 2: calculate the difference between these two values
 
@@ -462,7 +393,7 @@ Self Join
 
 ```
 
-[https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/](https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/)  
+[https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/](https://stevestedman.com/2013/04/rows-and-range-preceding-and-following/)\
 
 
 ## 表与表之间的关系
@@ -471,7 +402,7 @@ Self Join
 
 如果两个表的关系是Many-to-Many，如students对应teachers，需要中间一个表保存对应关系
 
-![&#x4E2D;&#x95F4;&#x7684;&#x8868;&#x4FDD;&#x5B58;&#x5BF9;&#x5E94;&#x5173;&#x7CFB;](../.gitbook/assets/image%20%28104%29.png)
+![中间的表保存对应关系](<../../.gitbook/assets/image (104).png>)
 
 Query查询的时候，可以从左向右依次查，如先JOIN students和students\_teachers on `student_id`，然后再JOIN students\_teachers和teachers on `teacher_id`。
 
@@ -479,9 +410,9 @@ Query查询的时候，可以从左向右依次查，如先JOIN students和stude
 
 
 
-![](../.gitbook/assets/image%20%28100%29.png)
+![](<../../.gitbook/assets/image (100).png>)
 
-## 外键约束 
+## 外键约束&#x20;
 
 {% embed url="https://dev.mysql.com/doc/refman/8.0/en/create-table-foreign-keys.html" %}
 
@@ -551,7 +482,7 @@ CREATE TABLE product_order (
 )   ENGINE=INNODB;
 ```
 
-![](../.gitbook/assets/image%20%28107%29.png)
+![](<../../.gitbook/assets/image (107).png>)
 
 {% embed url="https://www.youtube.com/watch?v=-c7PXt7i37A" %}
 
@@ -565,7 +496,7 @@ CREATE TABLE product_order (
 
 当表中自己和自己join时，需要在建表时就设置好外键
 
-![](../.gitbook/assets/image%20%2892%29.png)
+![](<../../.gitbook/assets/image (92).png>)
 
 ```sql
 CREATE TABLE `employees` (
@@ -588,7 +519,7 @@ CREATE TABLE `employees` (
 
 当两个表需要同时写入数据，而其中一张表又跟上一张表有FK约束关系，可以用`LAST_INSERT_ID`来获取前一张表中插入的ID，下图中，两个`LAST_INSERT_ID`的值都是一样的。
 
-![](../.gitbook/assets/image%20%28106%29.png)
+![](<../../.gitbook/assets/image (106).png>)
 
 ## Subquery
 
@@ -596,13 +527,11 @@ CREATE TABLE `employees` (
 
 **Hint：**可以先单独执行subquery，确定返回的内容再说。
 
-![Subquery&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x5355;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28110%29.png)
+![Subquery返回的是单个值](<../../.gitbook/assets/image (110).png>)
 
-![Subquery&#x8FD4;&#x56DE;&#x591A;&#x4E2A;&#x503C;](../.gitbook/assets/image%20%28108%29.png)
+![Subquery返回多个值](<../../.gitbook/assets/image (108).png>)
 
 ## 参考资料
 
-{% embed url="https://www.youtube.com/watch?v=7S\_tz1z\_5bA" %}
-
-
+{% embed url="https://www.youtube.com/watch?v=7S_tz1z_5bA" %}
 

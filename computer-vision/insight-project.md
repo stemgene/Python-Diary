@@ -12,9 +12,8 @@
 
 ### [Python 竟能解析 PDF 表格？](https://www.itcodemonkey.com/article/8075.html)
 
-{% embed url="https://blog.csdn.net/qq\_25343557/article/details/78691828" %}
+{% embed url="https://blog.csdn.net/qq_25343557/article/details/78691828" %}
 
 {% embed url="https://www.jianshu.com/p/b85667a4ef76" %}
 
 [https://blog.csdn.net/JohinieLi/article/details/81041276](https://blog.csdn.net/JohinieLi/article/details/81041276)
-

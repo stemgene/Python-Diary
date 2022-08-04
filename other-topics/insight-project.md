@@ -10,12 +10,12 @@ This project is divided into two parts, data collection part and recommendation 
 
 #### Data Collection:
 
-| Youtube  | Category: Food, 12 months |
-| :--- | :--- |
-| video | category\_id/video\_id + title/ channel title/ time/views/\(dis\)likes/comment |
-| channel\_id | comment\_text + likes/ historical video\_id + title |
-| subscriber\[optional\] | id/likes AND food videos |
-| Google trending\[optional\] | food name |
+| Youtube                    | Category: Food, 12 months                                                    |
+| -------------------------- | ---------------------------------------------------------------------------- |
+| video                      | category\_id/video\_id + title/ channel title/ time/views/(dis)likes/comment |
+| channel\_id                | comment\_text + likes/ historical video\_id + title                          |
+| subscriber\[optional]      | id/likes AND food videos                                                     |
+| Google trending\[optional] | food name                                                                    |
 
 #### Data Preprocessing:
 
@@ -40,25 +40,23 @@ fuzzywuzzy模糊匹配
 
 TF-IDF提取热词
 
-[food语料库](https://www.researchgate.net/publication/337030736_FoodBase_corpus_a_new_resource_of_annotated_food_entities)
+[food语料库](https://www.researchgate.net/publication/337030736\_FoodBase\_corpus\_a\_new\_resource\_of\_annotated\_food\_entities)
 
 #### [快速生成食物向量](https://medium.com/shidanqing/%E5%BF%AB%E9%80%9F%E7%94%9F%E6%88%90%E9%A3%9F%E7%89%A9%E5%90%91%E9%87%8F-5cc39adfb291)
 
 ### Recommendation algorithm
 
-{% embed url="https://blog.csdn.net/John\_xyz/article/details/78915150" %}
+{% embed url="https://blog.csdn.net/John_xyz/article/details/78915150" %}
 
-#### [推荐系统遇上深度学习\(二十五\)--当知识图谱遇上个性化推荐](https://zhuanlan.zhihu.com/p/48601941)
+#### [推荐系统遇上深度学习(二十五)--当知识图谱遇上个性化推荐](https://zhuanlan.zhihu.com/p/48601941)
 
 #### [近期必读的12篇「推荐系统」相关论文](https://www.ctolib.com/topics-138700.html)
 
 ## Recognize item in image
 
-{% embed url="https://www.researchgate.net/publication/283200263\_DeepBag\_Recognizing\_Handbag\_Models" %}
+{% embed url="https://www.researchgate.net/publication/283200263_DeepBag_Recognizing_Handbag_Models" %}
 
 {% embed url="https://sci-hub.tw/10.1109/TMM.2015.2480228" %}
 
 {% embed url="http://www.bmva.org/bmvc/2017/papers/paper066/paper066.pdf" %}
-
-
 
