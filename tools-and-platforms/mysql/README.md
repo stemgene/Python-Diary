@@ -152,33 +152,6 @@ WHERE order_date < '2019'
 
 ![](<../../.gitbook/assets/image (103).png>)
 
-## 聚合Functions
-
-| Functions          | Examples                                                                                   |
-| ------------------ | ------------------------------------------------------------------------------------------ |
-| MAX, MIN, AVG, SUM |                                                                                            |
-| COUNT              | 聚合的计算结果虽然是一个数字，但查询的结果仍然是一个二维表，只是这个二维表只有一行一列，并且列名是`COUNT(*)。COUNT(*)`和`COUNT(id)`实际上是一样的效果。 |
-|                    |                                                                                            |
-| COUNT(DISTINCT)    |                                                                                            |
-
-```sql
-# 分组聚合
-SELECT COUNT(*) num #用聚合函数后通常都会跟一个别名
-FROM students
-GROUP BY class_id
-
-#return
-num
-4
-3
-4
-
-# 按照class_id和gender分组
-SELECT class_id, gender, COUNT(*) num 
-FROM students 
-GROUP BY class_id, gender;
-```
-
 ## WHERE & HAVING
 
 **Having** clause acts as a filter on aggregated data. In other words, this is the way that you filter on the results of your aggregate functions.
