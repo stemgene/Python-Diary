@@ -41,7 +41,7 @@ OFFSET 3  # omit first 3
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | LIKE **** (wildcard matching) | <p>like ‘%a’          //以a结尾的</p><p>like ‘%or%’     //含有or的元素</p><p>like ‘_r%’        //第二位是r，_表示单个字符</p><p>like ‘a%o’       //以a开头o结尾的</p>                                                                          |
 | REGEXP                        | <p>regexp 'a'       -- 包含任何a(A)的</p><p>regexp '^a'     -- 以a(A)开头的</p><p>regexp 'a$'    -- 以a(A)结尾的</p><p>regexp 'a|b|c' -- 包含a或b或c</p><p>regexp '[gim]e'  --包含ge或ie或me的</p><p>regexp '[a-d]e'  --包含ae或be或ce或de的</p> |
-| BETWEEN                       | SELECT name, area FROM world WHERE area BETWEEN 250000 AND 300000                                                                                                                                                    |
+| BETWEEN                       | <p>SELECT name, area </p><p>FROM world </p><p>WHERE area BETWEEN 250 AND 3000</p>                                                                                                                                    |
 | IN                            | 复选命令，相当于 where 列 = term1 or term2 or term...                                                                                                                                                                         |
 | IS                            | WHERE Review.Rating IS NULL                                                                                                                                                                                          |
 |                               | <p>ORDER BY state DESC, first_name ASEC  --先按照state排序，如果state一致再按name排</p><p>即使SELETE没选中排序的列，也仍然可以按照该列排序，select birthday order by name</p>                                                                           |
@@ -87,6 +87,8 @@ WHERE review.rating >= 3 # review: table, rating: col
 ![多个表的outer join](<../../.gitbook/assets/image (93).png>)
 
 ### SELF JOIN
+
+self join的目的是让表中同一列的值出现在两列中。比如下方例子中的first name，既要当员工，也要当manager。再如汽车站stop，既要当出发点，也要当目的地。此时就把表定义成a和b，然后join
 
 ![表自身的inner join](<../../.gitbook/assets/image (101).png>)
 
