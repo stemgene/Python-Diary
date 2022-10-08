@@ -37,19 +37,29 @@ OFFSET 3  # omit first 3
 
 ## Operators
 
-| Operators                     | Examples                                                                                                                                                                                                             |
-| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| LIKE **** (wildcard matching) | <p>like ‘%a’          //以a结尾的</p><p>like ‘%or%’     //含有or的元素</p><p>like ‘_r%’        //第二位是r，_表示单个字符</p><p>like ‘a%o’       //以a开头o结尾的</p>                                                                          |
-| REGEXP                        | <p>regexp 'a'       -- 包含任何a(A)的</p><p>regexp '^a'     -- 以a(A)开头的</p><p>regexp 'a$'    -- 以a(A)结尾的</p><p>regexp 'a|b|c' -- 包含a或b或c</p><p>regexp '[gim]e'  --包含ge或ie或me的</p><p>regexp '[a-d]e'  --包含ae或be或ce或de的</p> |
-| BETWEEN                       | <p>SELECT name, area </p><p>FROM world </p><p>WHERE area BETWEEN 250 AND 3000</p>                                                                                                                                    |
-| IN                            | 复选命令，相当于 where 列 = term1 or term2 or term...                                                                                                                                                                         |
-| IS                            | WHERE Review.Rating IS NULL                                                                                                                                                                                          |
-|                               | <p>ORDER BY state DESC, first_name ASEC  --先按照state排序，如果state一致再按name排</p><p>即使SELETE没选中排序的列，也仍然可以按照该列排序，select birthday order by name</p>                                                                           |
-| EXISTS                        |                                                                                                                                                                                                                      |
-| CAST                          | <p>CAST函数用于将某种数据类型的表达式显式转换为另一种数据类型。</p><p>语法：CAST (expression AS data_type)</p><p>CAST('9.5' AS decimal(10, 2))# 精度与小数位数分别为10与2。精度是总的数字位数，包括小数点左边和右边位数的总和。而小数位数是小数点右边的位数</p>                                         |
-| %取余数                          | <p>偶数 num%2 = 0</p><p>奇数 num%2 = 1</p>                                                                                                                                                                               |
-| LEN()                         | 字符串长度                                                                                                                                                                                                                |
-| substr()                      | <p>substr(string ,num start,num length)</p><p>where lower(substr(city,1,1)) in ('a','e','i','o','u'); #开头字母是元音</p>                                                                                                   |
+| Operators                              | Examples                                                                                                                                                                                                             |
+| -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| LIKE **** (wildcard matching)          | <p>like ‘%a’          //以a结尾的</p><p>like ‘%or%’     //含有or的元素</p><p>like ‘_r%’        //第二位是r，_表示单个字符</p><p>like ‘a%o’       //以a开头o结尾的</p>                                                                          |
+| REGEXP                                 | <p>regexp 'a'       -- 包含任何a(A)的</p><p>regexp '^a'     -- 以a(A)开头的</p><p>regexp 'a$'    -- 以a(A)结尾的</p><p>regexp 'a|b|c' -- 包含a或b或c</p><p>regexp '[gim]e'  --包含ge或ie或me的</p><p>regexp '[a-d]e'  --包含ae或be或ce或de的</p> |
+| BETWEEN                                | <p>SELECT name, area </p><p>FROM world </p><p>WHERE area BETWEEN 250 AND 3000</p>                                                                                                                                    |
+| IN                                     | 复选命令，相当于 where 列 = term1 or term2 or term...                                                                                                                                                                         |
+| IS                                     | WHERE Review.Rating IS NULL                                                                                                                                                                                          |
+|                                        | <p>ORDER BY state DESC, first_name ASEC  --先按照state排序，如果state一致再按name排</p><p>即使SELETE没选中排序的列，也仍然可以按照该列排序，select birthday order by name</p>                                                                           |
+| EXISTS                                 |                                                                                                                                                                                                                      |
+| CAST                                   | <p>CAST函数用于将某种数据类型的表达式显式转换为另一种数据类型。</p><p>语法：CAST (expression AS data_type)</p><p>CAST('9.5' AS decimal(10, 2))# 精度与小数位数分别为10与2。精度是总的数字位数，包括小数点左边和右边位数的总和。而小数位数是小数点右边的位数</p>                                         |
+| %取余数                                   | <p>偶数 num%2 = 0</p><p>奇数 num%2 = 1</p>                                                                                                                                                                               |
+| LEN()                                  | 字符串长度                                                                                                                                                                                                                |
+| substr()                               | <p>substr(string ,num start,num length)</p><p>where lower(substr(city,1,1)) in ('a','e','i','o','u'); #开头字母是元音</p>                                                                                                   |
+| FIRST_VALUE() / LAST_VALUE()           |                                                                                                                                                                                                                      |
+| LAG()                                  |                                                                                                                                                                                                                      |
+| LEAD()                                 |                                                                                                                                                                                                                      |
+| RANK() / DENSE_RANK() / PERCENT\_RANK_ |                                                                                                                                                                                                                      |
+| CUME\_DIST()                           |                                                                                                                                                                                                                      |
+| NTILE()                                |                                                                                                                                                                                                                      |
+| ROW\_NUMBER()                          |                                                                                                                                                                                                                      |
+| date\_diff(日期1, 日期2)                   | <p>日期1与日期2相差的天数。 </p><p>如果日期1比日期2大，结果为正；</p><p>如果日期1比日期2小，结果为负。</p>                                                                                                                                                  |
+| timestampdiff(时间类型, 日期1, 日期2)          | <p>“时间类型”的参数，“day”, “hour”, “second”等<br>日期1大于日期2，结果为负，日期1小于日期2，结果为正。</p>                                                                                                                                            |
+| YEAR()                                 | WHERE YEAR(birth\_date) = 2010;                                                                                                                                                                                      |
 
 SQL的comparison operators，=, !=, <, <=, >, >=不仅可以用在numerical data，对于字符串等非数字型的数据也可以。**但是需要注意的是必须用单引号来框上该变量，SQL中用单引号来引用column中的值。** &#x20;
 
@@ -60,6 +70,8 @@ WHERE month_name != 'January'
 // can use <, > or other operators 按照字母顺序来比对
 WHERE month_name > 'July'
 ```
+
+
 
 ## JOIN
 
