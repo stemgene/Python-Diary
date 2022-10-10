@@ -71,7 +71,22 @@ WHERE month_name != 'January'
 WHERE month_name > 'July'
 ```
 
+## IF and SWITCH
 
+### IF 和JAVA一样是三段论
+
+```sql
+IF (MOD(employee_id, 2) = 1 AND name NOT LIKE 'M%', salary, 0) as bonus
+```
+
+### SWITCH
+
+```
+// Some code
+SWITCH WHEN MOD(employee_id,2) = 1 THEN salary,
+       ELSE 0 
+       END as bonus
+```
 
 ## JOIN
 
