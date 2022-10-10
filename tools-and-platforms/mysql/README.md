@@ -79,13 +79,12 @@ WHERE month_name > 'July'
 IF (MOD(employee_id, 2) = 1 AND name NOT LIKE 'M%', salary, 0) as bonus
 ```
 
-### SWITCH
+### CASE
 
-```
-// Some code
-SWITCH WHEN MOD(employee_id,2) = 1 THEN salary,
-       ELSE 0 
-       END as bonus
+```sql
+CASE WHEN MOD(employee_id,2) = 1 THEN salary,
+     ELSE 0 
+END as bonus
 ```
 
 ## JOIN
