@@ -77,6 +77,8 @@ WHERE month_name > 'July'
 
 ```sql
 IF (MOD(employee_id, 2) = 1 AND name NOT LIKE 'M%', salary, 0) as bonus
+
+UPDATE Salary SET sex = IF (sex = 'm', 'f', 'm');
 ```
 
 ### CASE
