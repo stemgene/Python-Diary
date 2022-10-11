@@ -71,7 +71,7 @@ WHERE month_name != 'January'
 WHERE month_name > 'July'
 ```
 
-## IF and SWITCH
+## IF and  CASE
 
 ### IF 和JAVA一样是三段论
 
@@ -182,7 +182,21 @@ WHERE order_date < '2019'
 
 ![](<../../.gitbook/assets/image (103).png>)
 
-## WHERE & HAVING
+## Aggregate
+
+### Group By
+
+#### Group\_concat，把多行数据转成一行
+
+![](<../../.gitbook/assets/image (1).png>)
+
+上图中的输出表格中，第一行多个products可以通过`group_concat`命令得到
+
+```sql
+GROUP_CONCAT(DISTINCT product) AS products
+```
+
+### WHERE & HAVING
 
 **Having** clause acts as a filter on aggregated data. In other words, this is the way that you filter on the results of your aggregate functions.
 

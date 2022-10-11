@@ -2,7 +2,7 @@
 
 ## Classical Categories:
 
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (2).png>)
 
 * Supervised Learning: **Given labels**
   * Regression: 定量
