@@ -48,6 +48,7 @@
 
 * [MySQL](tools-and-platforms/mysql/README.md)
   * [String & Regexp](tools-and-platforms/mysql/string-and-regexp.md)
+* [NoSQL-MongoDB](tools-and-platforms/nosql-mongodb.md)
 * [Github](tools-and-platforms/github/README.md)
   * [SSH访问](tools-and-platforms/github/ssh-fang-wen.md)
   * [通过vscode访问](tools-and-platforms/github/tong-guo-vscode-fang-wen.md)
