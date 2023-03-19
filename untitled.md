@@ -95,6 +95,23 @@ print(2**a, "\n")  # remember: exponent with **, not with ^
 ##        [False,  True,  True,  True]])
 ```
 
+增加维度。在 NumPy 中， `[..., None]` 表示使用一个 ellipsis（省略号）和 None 来扩展数组的维度。具体来说， `[..., None]` 表示在该维度上添加一个新的轴，这个轴的大小为 1，例如
+
+```
+a = np.array([0]*2)
+print(a.shape)  # (2,)
+
+b = a[..., None]
+print(b.shape)  # (2, 1)
+```
+
+在这个例子中，我们可以看到 `[..., None]` 把一个一维数组变成了一个列向量。这种用法经常在矩阵计算中出现，特别是当需要将一维数组作为列向量输入到矩阵乘法中时。
+
+\
+
+
+
+
 ### Array Indexing and Slicing
 
 #### Extracting elements based on position
