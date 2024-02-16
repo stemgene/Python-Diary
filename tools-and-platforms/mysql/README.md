@@ -5,6 +5,10 @@ description: >-
 
 # MySQL
 
+练习用资源：[https://www.db-fiddle.com/](https://www.db-fiddle.com/), [https://docs.google.com/document/d/1CbE\_\_f59HNBHv4RXvY3Kk3YKN6uVr8KwysiS6DBHUFA/edit?usp=sharing](https://docs.google.com/document/d/1CbE\_\_f59HNBHv4RXvY3Kk3YKN6uVr8KwysiS6DBHUFA/edit?usp=sharing)
+
+
+
 ## General
 
 | Syntactical Order of Operations | Logical Order of Operations |
@@ -39,7 +43,7 @@ OFFSET 3  # omit first 3
 
 | Operators                              | Examples                                                                                                                                                                                                             |
 | -------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| LIKE **** (wildcard matching)          | <p>like ‘%a’          //以a结尾的</p><p>like ‘%or%’     //含有or的元素</p><p>like ‘_r%’        //第二位是r，_表示单个字符</p><p>like ‘a%o’       //以a开头o结尾的</p>                                                                          |
+| LIKE (wildcard matching)               | <p>like ‘%a’          //以a结尾的</p><p>like ‘%or%’     //含有or的元素</p><p>like ‘_r%’        //第二位是r，_表示单个字符</p><p>like ‘a%o’       //以a开头o结尾的</p>                                                                          |
 | REGEXP                                 | <p>regexp 'a'       -- 包含任何a(A)的</p><p>regexp '^a'     -- 以a(A)开头的</p><p>regexp 'a$'    -- 以a(A)结尾的</p><p>regexp 'a|b|c' -- 包含a或b或c</p><p>regexp '[gim]e'  --包含ge或ie或me的</p><p>regexp '[a-d]e'  --包含ae或be或ce或de的</p> |
 | BETWEEN                                | <p>SELECT name, area </p><p>FROM world </p><p>WHERE area BETWEEN 250 AND 3000</p>                                                                                                                                    |
 | IN                                     | 复选命令，相当于 where 列 = term1 or term2 or term...                                                                                                                                                                         |
