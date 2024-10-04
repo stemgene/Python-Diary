@@ -2,6 +2,8 @@
 
 <figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
+Git是具有本地repository的，`git commit`的作用就是推送到本地repository
+
 ## 基本git指令
 
 ```
