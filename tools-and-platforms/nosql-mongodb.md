@@ -59,14 +59,7 @@ db.user.find({"name": /^mongo/});
 db.user.find({"name": /mongo$/});
 ```
 
-| 操作    | 格式                       | 范例                          | RDBMS中的类似语句         |
-| ----- | ------------------------ | --------------------------- | ------------------- |
-| 等于    | `{<key>:<value>`}        | `find({"by":"菜鸟教程"})`       | `where by = '菜鸟教程'` |
-| 小于    | `{<key>:{$lt:<value>}}`  | `find({"likes":{$lt:50}})`  | `where likes < 50`  |
-| 小于或等于 | `{<key>:{$lte:<value>}}` | `find({"likes":{$lte:50}})` | `where likes <= 50` |
-| 大于    | `{<key>:{$gt:<value>}}`  | `find({"likes":{$gt:50}})`  | `where likes > 50`  |
-| 大于或等于 | `{<key>:{$gte:<value>}}` | `find({"likes":{$gte:50}})` | `where likes >= 50` |
-| 不等于   | `{<key>:{$ne:<value>}}`  | `find({"likes":{$ne:50}})`  | `where likes != 50` |
+<table><thead><tr><th width="106">操作</th><th width="257">格式</th><th width="289">范例</th><th>RDBMS中的类似语句</th></tr></thead><tbody><tr><td>等于</td><td><code>{&#x3C;key>:&#x3C;value></code>}</td><td><code>find({"by":"菜鸟教程"})</code></td><td><code>where by = '菜鸟教程'</code></td></tr><tr><td>小于</td><td><code>{&#x3C;key>:{$lt:&#x3C;value>}}</code></td><td><code>find({"likes":{$lt:50}})</code></td><td><code>where likes &#x3C; 50</code></td></tr><tr><td>小于或等于</td><td><code>{&#x3C;key>:{$lte:&#x3C;value>}}</code></td><td><code>find({"likes":{$lte:50}})</code></td><td><code>where likes &#x3C;= 50</code></td></tr><tr><td>大于</td><td><code>{&#x3C;key>:{$gt:&#x3C;value>}}</code></td><td><code>find({"likes":{$gt:50}})</code></td><td><code>where likes > 50</code></td></tr><tr><td>大于或等于</td><td><code>{&#x3C;key>:{$gte:&#x3C;value>}}</code></td><td><code>find({"likes":{$gte:50}})</code></td><td><code>where likes >= 50</code></td></tr><tr><td>不等于</td><td><code>{&#x3C;key>:{$ne:&#x3C;value>}}</code></td><td><code>find({"likes":{$ne:50}})</code></td><td><code>where likes != 50</code></td></tr></tbody></table>
 
 MongoDB 的 find() 方法可以传入多个键(key)，每个键(key)以逗号隔开，即常规 SQL 的 AND 条件。
 
@@ -111,16 +104,7 @@ MongoDB 中聚合(aggregate)主要用于处理数据(诸如统计平均值，求
 
 
 
-| 表达式       | 描述                                        | 实例                                                                                         |
-| --------- | ----------------------------------------- | ------------------------------------------------------------------------------------------ |
-| $sum      | 计算总和。                                     | db.mycol.aggregate(\[{$group : {\_id : "$by\_user", num\_tutorial : {$sum : "$likes"\}}}]) |
-| $avg      | 计算平均值                                     | db.mycol.aggregate(\[{$group : {\_id : "$by\_user", num\_tutorial : {$avg : "$likes"\}}}]) |
-| $min      | 获取集合中所有文档对应值得最小值。                         | db.mycol.aggregate(\[{$group : {\_id : "$by\_user", num\_tutorial : {$min : "$likes"\}}}]) |
-| $max      | 获取集合中所有文档对应值得最大值。                         | db.mycol.aggregate(\[{$group : {\_id : "$by\_user", num\_tutorial : {$max : "$likes"\}}}]) |
-| $push     | 将值加入一个数组中，不会判断是否有重复的值。                    | db.mycol.aggregate(\[{$group : {\_id : "$by\_user", url : {$push: "$url"\}}}])             |
-| $addToSet | 将值加入一个数组中，会判断是否有重复的值，若相同的值在数组中已经存在了，则不加入。 | db.mycol.aggregate(\[{$group : {\_id : "$by\_user", url : {$addToSet : "$url"\}}}])        |
-| $first    | 根据资源文档的排序获取第一个文档数据。                       | db.mycol.aggregate(\[{$group : {\_id : "$by\_user", first\_url : {$first : "$url"\}}}])    |
-| $last     | 根据资源文档的排序获取最后一个文档数据                       | db.mycol.aggregate(\[{$group : {\_id : "$by\_user", last\_url : {$last : "$url"\}}}])      |
+<table><thead><tr><th width="99.33333333333331">表达式</th><th>描述</th><th>实例</th></tr></thead><tbody><tr><td>$sum</td><td>计算总和。</td><td>db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$sum : "$likes"}}}])</td></tr><tr><td>$avg</td><td>计算平均值</td><td>db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$avg : "$likes"}}}])</td></tr><tr><td>$min</td><td>获取集合中所有文档对应值得最小值。</td><td>db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$min : "$likes"}}}])</td></tr><tr><td>$max</td><td>获取集合中所有文档对应值得最大值。</td><td>db.mycol.aggregate([{$group : {_id : "$by_user", num_tutorial : {$max : "$likes"}}}])</td></tr><tr><td>$push</td><td>将值加入一个数组中，不会判断是否有重复的值。</td><td>db.mycol.aggregate([{$group : {_id : "$by_user", url : {$push: "$url"}}}])</td></tr><tr><td>$addToSet</td><td>将值加入一个数组中，会判断是否有重复的值，若相同的值在数组中已经存在了，则不加入。</td><td>db.mycol.aggregate([{$group : {_id : "$by_user", url : {$addToSet : "$url"}}}])</td></tr><tr><td>$first</td><td>根据资源文档的排序获取第一个文档数据。</td><td>db.mycol.aggregate([{$group : {_id : "$by_user", first_url : {$first : "$url"}}}])</td></tr><tr><td>$last</td><td>根据资源文档的排序获取最后一个文档数据</td><td>db.mycol.aggregate([{$group : {_id : "$by_user", last_url : {$last : "$url"}}}])</td></tr></tbody></table>
 
 ## Join操作
 

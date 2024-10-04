@@ -23,7 +23,7 @@ Python中的list存放的是变量内容的地址而不是变量内容的本身�
 | ----------------------- | ----------------------- | -------------------- |
 | **index\[]/assignment** | **`list[9]`**           | **O(1)**             |
 | append                  | `list[9]=1`             | O(1)                 |
-| **pop/pop(i)**          | ****                    | **O(1)/O(n)worst**   |
+| **pop/pop(i)**          |                         | **O(1)/O(n)worst**   |
 | insert                  | `insert(i,item)`        | O(n)                 |
 | del                     |                         | O(n)                 |
 | iteration               | `for i in list`         | O(n)                 |
