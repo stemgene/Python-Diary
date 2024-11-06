@@ -52,6 +52,7 @@
 * [Github](tools-and-platforms/github/README.md)
   * [SSH访问](tools-and-platforms/github/ssh-fang-wen.md)
   * [通过vscode访问](tools-and-platforms/github/tong-guo-vscode-fang-wen.md)
+  * [Pull Request](tools-and-platforms/github/pull-request.md)
 * [PostgreSQL](tools-and-platforms/postgresql.md)
 
 ## Machine Learning
