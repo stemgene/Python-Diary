@@ -74,10 +74,48 @@ git branch -d restore-to-second （可选，删除分支）
 
 `git stash`用于将当前的工作进度（未提交的修改）保存到一个临时堆栈中，随后可以在需要的时候恢复这些修改
 
-#### 1. 将当前工作存放到stash
+#### 1. 将当前工作存放到`stash`
 
 ```bash
 // 有未提交的修改或文件，可以保存到stach，并将工作目录恢复到上一次提交
 git stash
+```
+
+#### 2. 查看所有`stash`记录并恢复
+
+```bash
+// 查看当前堆栈中存储的状态
+git stash list
+
+stash@{0}: WIP on main: 4d2b3a5 Add README file
+stash@{1}: WIP on feature: 3a7c9f2 Fix login issue
+
+// 恢复保存的工作状态
+// 恢复最近一次
+git stash apply
+// 恢复并移除对应的最近一次
+git stash pop
+// 恢复指定的stash
+git stash apply stash@{1}
+```
+
+#### 3. `stash`的应用场景
+
+```bash
+// 切换分支但不想提交当前修改
+# 保存当前工作状态
+git stash
+# 切换到另一个分支
+git checkout new-brach
+# 完成工作后切回原分支
+git checkout main
+# 恢复之前的工作状态
+git stash pop
+
+// 暂存工作以解决冲突
+git stash
+git merge another-branch
+# 解决冲突后恢复之前的工作
+git stash pop
 ```
 
